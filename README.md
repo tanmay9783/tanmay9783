@@ -96,13 +96,6 @@
 
 ---
 
-### 🏆 GitHub Trophies
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=tanmay9783&theme=tokyonight&margin-w=10&margin-h=10&no-bg=true&no-frame=true" />
-</p>
-
----
 
 ### 📈 GitHub Stats & Activity
 
