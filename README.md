@@ -18,7 +18,7 @@
 
 ### ✨ About Me
 
-- 🌱 Currently learning: **React, Next.js, MERN, Java DSA, AWS & 100xDevs**
+- 🌱 Currently learning: **React, Next.js, MERN, Java DSA, AWS**
 - 🧩 Love solving: **DSA problems in Java** & building **backend-heavy apps**
 - 🛠 Projects around: **IoT Smart Security**, **Micro-Internship Platforms**
 - 🧠 Interested in: **Backend Dev • Cloud • System Design • DevOps**
