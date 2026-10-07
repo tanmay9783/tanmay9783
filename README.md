@@ -20,7 +20,7 @@
 
 - 🌱 Currently learning: **React, Next.js, MERN, Java DSA, AWS**
 - 🧩 Love solving: **DSA problems in Java** & building **backend-heavy apps**
-- 🛠 Projects around: **IoT Smart Security**, **Micro-Internship Platforms**
+- 🛠 Projects around: **IoT Smart Security
 - 🧠 Interested in: **Backend Dev • Cloud • System Design • DevOps**
 - 🎯 Goal: Become a **strong full-stack + backend dev** & build impactful products
 
