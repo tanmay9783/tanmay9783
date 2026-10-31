@@ -93,6 +93,53 @@ Technologies actively being studied and tested in lab environments:
 
 ---
 
+### Featured Project Overview
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="25%">
+        <a href="#1-coditorium--competitive-coding--assessment-platform-flagship-project">
+          <img src="./assets/projects/coditorium-logo.png" width="100%" alt="Coditorium Preview" />
+        </a>
+        <br/>
+        <strong>Coditorium</strong>
+        <br/>
+        <sub>Judge & Assessment Engine</sub>
+      </td>
+      <td align="center" width="25%">
+        <a href="#2-nijisamvad--client-side-encrypted-communication--webrtc-mesh">
+          <img src="./assets/projects/nijisamvad-preview.png" width="100%" alt="NijiSamvad Preview" />
+        </a>
+        <br/>
+        <strong>NijiSamvad</strong>
+        <br/>
+        <sub>Client-Side Encrypted Chat</sub>
+      </td>
+      <td align="center" width="25%">
+        <a href="#3-dropx--ephemeral-cross-device-data--file-sharing-utility">
+          <img src="./assets/projects/dropx-preview.png" width="100%" alt="DropX Preview" />
+        </a>
+        <br/>
+        <strong>DropX</strong>
+        <br/>
+        <sub>Ephemeral File Sharing</sub>
+      </td>
+      <td align="center" width="25%">
+        <a href="#4-planrova--local-first-academic-productivity-system">
+          <img src="./assets/projects/planrova-preview.png" width="100%" alt="Planrova Preview" />
+        </a>
+        <br/>
+        <strong>Planrova</strong>
+        <br/>
+        <sub>Local-First Academic System</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
 ### Featured Engineering Projects
 
 #### 1. [Coditorium — Competitive Coding & Assessment Platform](https://github.com/tanmay9783/Coditorium) *(Flagship Project)*
@@ -102,29 +149,29 @@ Technologies actively being studied and tested in lab environments:
 - **What I Implemented:** Architected the end-to-end judge submission pipeline. Built a NestJS API that ingests code submissions, persists pending state in PostgreSQL via Prisma, and dispatches evaluation jobs to RabbitMQ. Implemented a dedicated execution worker service that dequeues tasks and runs compilation and evaluation inside rootless Podman containers.
 - **Architecture & System Design:**
   - **Monorepo Structure:** Structured via Turborepo containing `apps/backend` (NestJS REST API), `apps/frontend` (React + Vite), `apps/execution-worker` (isolated runner), and `packages/shared` (domain contracts).
-  - **Asynchronous Task Queue:** Submission ingestion is fully decoupled from execution using RabbitMQ AMQP channels, ensuring API responsiveness under burst submission traffic.
+  - **Asynchronous Task Queue:** Submission ingestion is fully decoupled from execution using RabbitMQ AMQP channels. Queue reliability is enforced via durable queue declarations (`durable: true`), persistent message delivery (`persistent: true`), and explicit worker acknowledgments (`noAck: false`).
   - **Security Jail (Rootless Podman):** Untrusted code executes inside rootless Podman containers with dropped capabilities, isolated namespaces, explicit CPU quotas (`--cpus`), strict memory bounds (`--memory`), disabled network access (`--network none`), and execution timeouts.
 - **Key Technical Decisions:**
-  - Selected **RabbitMQ** over in-memory or Redis-based task queues to guarantee message persistence, worker acknowledgments (`ack`/`nack`), and channel-level flow control.
-  - Chose **Rootless Podman** instead of standard Docker to prevent root-daemon exposure and root privilege escalation vectors on the host system.
-- **Current Limitations:** Per-submission container initialization introduces invocation latency (200–400ms); warm container pooling and microVM virtualization (e.g., Firecracker) are identified future milestones.
+  - Selected **RabbitMQ** over in-memory or Redis-based task queues to guarantee durable message delivery, channel-level flow control, and explicit consumer acknowledgment (`ack`/`nack`) semantics.
+  - Chose **Rootless Podman** instead of standard Docker to eliminate root-daemon exposure and root privilege escalation vectors on the host system.
+- **Current Limitations:** Per-submission container initialization introduces container cold-start latency compared to long-running worker processes; maintaining warm container pools or exploring microVM virtualization (e.g., Firecracker) are identified future milestones.
 - **Tech Stack:** `NestJS`, `React`, `Vite`, `TypeScript`, `PostgreSQL`, `Prisma ORM`, `RabbitMQ`, `Redis/Valkey`, `Rootless Podman`
 - **Repository:** [github.com/tanmay9783/Coditorium](https://github.com/tanmay9783/Coditorium)
 
 ---
 
-#### 2. [NijiSamvad — Zero-Knowledge E2EE Communication & WebRTC Mesh](https://github.com/tanmay9783/NijiSamvad)
+#### 2. [NijiSamvad — Client-Side Encrypted Communication & WebRTC Mesh](https://github.com/tanmay9783/NijiSamvad)
 *Ephemeral, zero-database real-time messaging and peer-to-peer WebRTC audio/video communication platform.*
 
 - **Problem Addressed:** Centralized collaboration applications persist user messages, identifiers, and media metadata indefinitely in cloud databases, leaving sensitive communication exposed to database leaks and server-side compromise.
-- **What I Implemented:** Engineered a zero-database communication platform combining client-side cryptographic key derivation, ephemeral WebSocket signaling, and direct peer-to-peer WebRTC audio/video mesh calling.
+- **What I Implemented:** Engineered an ephemeral communication platform combining client-side cryptographic key derivation, stateless WebSocket signaling, and direct peer-to-peer WebRTC audio/video mesh calling.
 - **Architecture & System Design:**
   - **Zero Server Persistence:** The Node.js signaling server operates strictly in volatile RAM, holding active socket rooms in memory with zero relational or document database retention.
   - **Client-Side Cryptographic Pipeline:** Browser clients derive symmetric 256-bit AES-GCM keys locally from high-entropy room secrets using the Web Crypto API (`crypto.subtle`) via PBKDF2 (SHA-256, 100,000 iterations).
-  - **Opaque Signal Relaying:** Chat messages and file payloads are encrypted client-side with AES-256-GCM using unique 12-byte initialization vectors (IVs) and transited over Socket.IO as opaque ciphertext buffers.
+  - **Opaque Signal Relaying:** Chat messages and file payloads are encrypted client-side with AES-256-GCM using unique 12-byte initialization vectors (IVs) and transited over Socket.IO as opaque ciphertext buffers without server decryption access.
   - **WebRTC Peer Mesh:** Audio and video streams route directly between client browsers using DTLS-SRTP encryption, using the signaling server strictly for SDP offer/answer exchange and ICE candidates.
 - **Key Technical Decisions:**
-  - Utilized native browser **Web Crypto API** rather than third-party JavaScript crypto bundles to leverage hardware-accelerated cryptographic primitives and eliminate supply-chain vulnerabilities.
+  - Utilized standard browser-native **Web Crypto API** primitives rather than external cryptographic npm packages to reduce bundle overhead and rely directly on W3C standard web platform implementations.
   - Implemented visual SHA-256 fingerprint verification (formatted as human-readable numerical blocks) to allow participants to detect man-in-the-middle tampering out-of-band.
 - **Current Limitations:** Relies on a pre-shared room secret between participants; does not implement an asymmetric Double Ratchet protocol (e.g., Signal Protocol) and therefore does not provide Perfect Forward Secrecy (PFS).
 - **Tech Stack:** `React 19`, `Node.js 18+`, `Socket.IO 4.8`, `Web Crypto API (AES-256-GCM)`, `WebRTC`, `Tailwind CSS`
@@ -168,7 +215,7 @@ Technologies actively being studied and tested in lab environments:
 
 ---
 
-#### 5. [Sanjeevni AI — Multimodal Patient Intake Kiosk](https://github.com/tanmay9783/Sanjeevni-AI)
+#### 5. [AI-Assisted Patient Intake (Sanjeevni AI)](https://github.com/tanmay9783/Sanjeevni-AI)
 *Autonomous primary healthcare intake kiosk featuring interactive 3D virtual avatars, speech recognition, and localized pain mapping.*
 
 - **Problem Addressed:** High patient volumes in community health clinics lead to extended waiting periods and diagnostic bottlenecks, where healthcare workers spend substantial time gathering routine demographic and symptom histories from low-literacy patients.
@@ -176,10 +223,10 @@ Technologies actively being studied and tested in lab environments:
 - **Architecture & System Design:**
   - **Kiosk Interface:** Built with React 18, Three.js, and Web Speech API to provide an accessible, hands-free conversational interface for low-literacy patients.
   - **Localized Pain Mapping:** Developed an interactive 2D anatomical body SVG map with 1–10 severity sliders, translating visual patient inputs into standardized anatomical coordinates.
-  - **Local-First Edge Storage:** Implemented local SQLite (`better-sqlite3`) storage on the kiosk engine to ensure uninterrupted intake collection even during clinic internet dropouts.
-  - **Separation of Concerns:** Built as an autonomous intake tier that formats patient dialogues into structured SOAP summaries, designed to asynchronously feed into **Swasya AI** (a separate companion clinical command center built for attending physicians).
+  - **Local-First Edge Storage:** Implemented local SQLite (`better-sqlite3`) storage on the kiosk node to persist demographic inputs, form responses, and anatomical coordinate logs locally. While core form logging functions without network access, multimodal AI extraction requires connectivity to reach Groq/LLaMA endpoints.
+  - **Separation of Concerns:** Built as an autonomous client-facing intake tier that structures patient dialogues into clinical SOAP summaries; designed to integrate asynchronously with **Swasya AI** (a separate companion clinical command center built for attending physicians).
 - **Key Technical Decisions:**
-  - Employed edge-deployed SQLite on the kiosk node so intake continues seamlessly during clinic connectivity outages.
+  - Employed edge-deployed SQLite on the kiosk node to retain patient responses locally and mitigate data loss during connectivity dropouts.
 - **Current Limitations:** Speech recognition accuracy remains dependent on ambient clinic acoustic noise; the system is designed solely for preliminary history-taking and triage pre-screening, not autonomous clinical diagnosis.
 - **Tech Stack:** `React 18`, `Three.js`, `Node.js (Express)`, `FastAPI`, `SQLite (better-sqlite3)`, `Groq LLaMA 3.3`
 - **Repository:** [github.com/tanmay9783/Sanjeevni-AI](https://github.com/tanmay9783/Sanjeevni-AI)
@@ -192,7 +239,7 @@ Technologies actively being studied and tested in lab environments:
 - **Problem Addressed:** Manual cloud provisioning produces configuration drift, inconsistent security policies, and deployment errors between development and production environments.
 - **What I Implemented:** Developed modular Terraform configurations that provision EC2 instances, VPC associations, and security groups dynamically across isolated environments.
 - **Architecture & System Design:** Utilizes Terraform Workspaces and environment-specific `.tfvars` files (`terraform.tfvars.dev`, `terraform.tfvars.prod`) to decouple configuration values from infrastructure definitions, querying AWS dynamic data sources (`aws_subnets`, `aws_ami`) to eliminate hardcoded identifiers.
-- **Key Technical Decisions:** Decoupled environment state into dedicated workspace state partitions, ensuring zero risk of accidental state collision between development and production runs.
+- **Key Technical Decisions:** Decoupled environment state into dedicated workspace state partitions, substantially mitigating the risk of accidental state collisions or cross-environment resource overwrites during development and production runs.
 - **Current Limitations:** Currently operates within default VPC subnets rather than provisioning custom multi-tier VPC topologies with private subnets, NAT gateways, and public load balancers.
 - **Tech Stack:** `Terraform (HCL)`, `AWS (EC2, VPC, IAM)`, `Linux Shell`
 - **Repository:** [github.com/tanmay9783/terraform-multi-environment](https://github.com/tanmay9783/terraform-multi-environment)
