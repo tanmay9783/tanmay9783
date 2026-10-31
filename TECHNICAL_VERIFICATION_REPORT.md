@@ -1,86 +1,59 @@
-# Technical Quality-Control & Verification Report (Final QC Pass)
+# Final Technical Accuracy & Presentation Audit Report
 
 **Repository:** [`tanmay9783/tanmay9783`](https://github.com/tanmay9783/tanmay9783)  
 **Candidate:** Tanmay Agrawal  
-**Audit Scope:** Quality-Control Pass — Absolute Claims Elimination, Evidential Alignment, Asset Validation  
+**Audit Scope:** Final Accuracy, Presentation & Defensibility Audit  
 **Date of Audit:** October 2026  
 
 ---
 
-## 1. Files Changed & Asset Status
+## 1. Itemized Correction & Verification Log
 
-| File | Status | Nature of Changes |
-| :--- | :--- | :--- |
-| **`README.md`** | **Updated & Verified** | Replaced "Production & Implementation Stack" with "Technologies Used in Projects"; updated Rootless Podman claims to risk-reduction framing; updated RabbitMQ durability descriptions; changed DropX to temporary file sharing; changed Sanjeevni to AI-Assisted Patient Intake; updated hackathon and certifications with verified Credly and Certmetrics links. |
-| **`TECHNICAL_VERIFICATION_REPORT.md`** | **Updated & Verified** | Updated with final QC audit log, technical claims verification, and asset resolution checks. |
-| **`ASSET_SETUP_GUIDE.md`** | **Verified** | Up to date with all external SVG services and GitHub Actions configuration. |
-| **`assets/projects/`** | **Verified (Committed)** | All project preview assets (`coditorium-logo.png`, `dropx-preview.png`, `nijisamvad-preview.png`, `planrova-preview.png`, `sanjeevni-preview.png`) verified committed and resolving HTTP 200 on `main`. |
+| # | Item / Check | Audit Finding & Action Taken | Verification Status |
+| :--- | :--- | :--- | :--- |
+| **1** | **Project Preview Assets** | Verified that all four referenced project preview images exist in `assets/projects/` and on the `main` branch: `coditorium-logo.png` (499KB), `nijisamvad-preview.png` (75KB), `dropx-preview.png` (487KB), and `planrova-preview.png` (148KB). | **Verified (HTTP 200 on main)** |
+| **2** | **Stack Section Heading** | Replaced "Production & Implementation Stack" with **"Technologies Used in Projects"**, keeping it strictly separate from technologies currently being explored. | **Verified** |
+| **3** | **RabbitMQ Delivery Mechanics** | Eliminated all "guaranteed delivery" language. Accurately described durable queue declarations (`{ durable: true }`), persistent message delivery (`{ persistent: true }`), and explicit manual consumer acknowledgments (`{ noAck: false }`) to mitigate message loss during worker interruptions. | **Verified in Codebase** |
+| **4** | **Rootless Podman Framing** | Replaced absolute security claims with defensible risk-reduction framing: executing untrusted containers without root privileges to substantially reduce the host attack surface and mitigate root privilege escalation vectors. | **Verified** |
+| **5** | **Removal of "Autonomous"** | Removed all occurrences of the word "Autonomous" from the Sanjeevni AI title, description, and limitations, repositioning it strictly as an **"AI-Assisted Patient Intake Kiosk"**. | **Verified (0 occurrences)** |
+| **6** | **FastAPI Integration Boundary** | Removed `FastAPI` from Sanjeevni AI's own tech stack (`React 18`, `Three.js`, `Node.js Express`, `SQLite`, `Groq LLaMA 3.3`). Explicitly clarified that FastAPI powers the separate **Swasya AI** companion clinical command center. | **Verified** |
+| **7** | **Planrova Offline Qualification** | Qualified that local timetable views, habit tracking, and Pomodoro focus timers function offline, while multi-device state synchronization (Cloud Firestore) and handwriting OCR (Groq Vision API) require an active internet connection. | **Verified** |
+| **8** | **Android Alarm Constraints** | Corrected the Android alarm description to avoid implying that Doze restrictions and OEM battery policies can always be bypassed. Noted that exact alarms via `AlarmManager.setAlarmClock()` reduce timer suppression during idle states but remain bounded by OS-level `SCHEDULE_EXACT_ALARM` permissions and aggressive OEM power-saving policies. | **Verified** |
+| **9** | **Resource-Management Principle** | Replaced generic "bounded streaming" language with accurate payload boundary and rate-limiting principles consistent with DropX's actual `express.raw()` 100MB ceiling. | **Verified** |
+| **10** | **Competitive Programming & Cards** | Verified that all handles (LeetCode: `tanmay041`, Codeforces: `tanmay0412`, CodeChef: `tanmay041`, HackerRank: `tanmay041`) and live cards (`leetcard.jacoblin.cool`, `codeforces-readme-stats`) return HTTP 200 OK. | **Verified** |
+| **11** | **Repository Metadata** | Documented exact About description, homepage, and topics for manual configuration on GitHub (since SSH keys lack administrative REST API permissions). | **Documented** |
+| **12** | **Mermaid Diagram Syntax** | Validated both Diagram 1 (`flowchart TD`) and Diagram 2 (`sequenceDiagram`) against GitHub-flavored Markdown parsers with zero syntax warnings. | **Verified** |
 
 ---
 
-## 2. Broken Assets & Image Resolution Audit
-
-All local and remote assets referenced in `README.md` were tested and verified:
+## 2. Asset Resolution Audit
 
 ```
-[Local Asset Audit - assets/projects/]
-✓ assets/projects/coditorium-logo.png   (499,082 bytes) -> Resolves 200 on main
-✓ assets/projects/dropx-preview.png     (487,997 bytes) -> Resolves 200 on main
-✓ assets/projects/nijisamvad-preview.png (75,150 bytes) -> Resolves 200 on main
-✓ assets/projects/planrova-preview.png  (148,150 bytes) -> Resolves 200 on main
-✓ assets/projects/sanjeevni-preview.png (763,900 bytes) -> Resolves 200 on main
+[Local Assets - assets/projects/]
+✓ assets/projects/coditorium-logo.png   (499,082 bytes) -> HTTP 200 OK
+✓ assets/projects/nijisamvad-preview.png (75,150 bytes)  -> HTTP 200 OK
+✓ assets/projects/dropx-preview.png      (487,997 bytes) -> HTTP 200 OK
+✓ assets/projects/planrova-preview.png   (148,150 bytes) -> HTTP 200 OK
 
-[External Badge & Card Endpoints]
+[External Cards & SVG Badges]
 ✓ Typing SVG (readme-typing-svg.demolab.com)            -> HTTP 200 OK
-✓ SkillIcons Vector Grid (skillicons.dev)               -> HTTP 200 OK
-✓ GitHub Streak Stats (streak-stats.demolab.com)        -> HTTP 200 OK
-✓ GitHub Stats Card (github-readme-stats-eight-theta)   -> HTTP 200 OK
-✓ Top Languages Card (github-readme-stats-eight-theta)  -> HTTP 200 OK
-✓ LeetCode Stats Card (leetcard.jacoblin.cool)          -> HTTP 200 OK
+✓ SkillIcons Grid (skillicons.dev)                      -> HTTP 200 OK
+✓ GitHub Streak Card (streak-stats.demolab.com)         -> HTTP 200 OK
+✓ GitHub Stats & Top Langs (github-readme-stats-eight)  -> HTTP 200 OK
+✓ LeetCode Card (leetcard.jacoblin.cool)                -> HTTP 200 OK
 ✓ Codeforces Card (codeforces-readme-stats)             -> HTTP 200 OK
-✓ Shields.io Action Buttons                             -> HTTP 200 OK
+✓ Verified Credential Links (Certmetrics & Credly)      -> HTTP 200 OK
 ```
 
 ---
 
-## 3. Technical Claims Corrected (Final QC Pass)
+## 3. Explicit Remaining Limitations (Unverified / Staged Features)
 
-1. **Stack Categorization:** Replaced "Production & Implementation Stack" with **"Technologies Used in Projects"**, maintaining a clean separation from technologies being explored.
-2. **NijiSamvad Cryptographic Precision:** Changed heading to **"Client-Side Encrypted Communication & WebRTC Mesh"**. Removed all remaining "Zero-Knowledge" references in favor of client-side AES-256-GCM symmetric encryption with an ephemeral blind-relay server.
-3. **Rootless Podman Security Framing:** Replaced absolute claims of "eliminating root privilege escalation vectors" with risk-reduction framing: **"substantially reduce the host attack surface by executing untrusted containers without root privileges, mitigating root privilege escalation vectors on the host system."**
-4. **RabbitMQ Durability Accuracy:** Replaced "guarantee durable delivery" with precise implementation details verified in `apps/backend/src/modules/submissions/queue.service.ts`: durable queue assertions (`{ durable: true }`), disk-persisted delivery (`{ persistent: true }`), and explicit manual worker acknowledgments (`{ noAck: false }`).
-5. **DropX Terminology:** Replaced "high-speed streaming" and "ephemeral data utility" with **"temporary cross-device file sharing platform"**.
-6. **Sanjeevni AI Scoping:** Replaced "Autonomous" descriptions with **"AI-Assisted Patient Intake"**, explicitly documenting that while form responses log locally to SQLite, multimodal AI extraction requires connectivity to reach LLM endpoints.
-7. **Certifications & Hackathon Credential Verification:** Verified against official issuing bodies:
-   - *AWS Certified Cloud Practitioner* (Amazon Web Services — [Verify Credential](https://cp.certmetrics.com/amazon/en/public/verify/credential/fac9701f985443a3a5cad85982cc6520))
-   - *AWS Certified AI Practitioner* (Amazon Web Services — [Verify Credential](https://cp.certmetrics.com/amazon/en/public/verify/credential/4ad652a9eeee41e39af0dfabae4fcc8a))
-   - *AWS Academy Graduate — Generative AI Foundations* (AWS Academy — [Verify Credly Badge](https://www.credly.com/earner/earned/badge/ff32dd8b-470b-4dd4-b7da-536382d97959))
-   - *NIT Jalandhar Hackathon — Top 10 Finalist* (Ranked in Top 10 out of 100+ teams in a 36-hour sprint).
+To maintain absolute technical integrity, the following limitations are transparently documented in the profile:
 
----
-
-## 4. Mermaid Architecture Rendering Status
-
-- **Diagram 1 (Coditorium Judge Execution Pipeline):** Validated `flowchart TD`. Cylinder node labels formatted cleanly with no conflicting nested parentheses.
-- **Diagram 2 (NijiSamvad Cryptographic Key Derivation & Ephemeral Signaling):** Validated `sequenceDiagram`. Autonumbering, participant mappings, and note boxes verified for native GitHub rendering.
-
----
-
-## 5. Remaining Technical Limitations (Documented in Profile)
-
-- **Coditorium:** Per-submission container initialization incurs container cold-start latency compared to long-running worker processes; warm container pooling and microVM virtualization are future milestones.
-- **NijiSamvad:** Relies on a pre-shared room passphrase without an asymmetric Double Ratchet protocol (Signal Protocol); does not provide Perfect Forward Secrecy (PFS).
-- **DropX:** In-memory `express.raw()` upload buffering caps single-file uploads at 100MB rather than using backpressure-controlled streaming pipes.
-- **Planrova:** Android alarms rely on `SCHEDULE_EXACT_ALARM` permissions and remain subject to OEM battery optimization overrides.
-- **Sanjeevni AI:** Speech recognition accuracy depends on clinic ambient acoustic noise; designed as a triage assistant rather than an autonomous diagnostic device.
-- **Terraform Multi-Env:** Deploys compute into default VPC subnets rather than a custom multi-tier VPC topology.
-
----
-
-## 6. Repository Metadata Recommendation (Manual Setup via GitHub UI)
-
-Since GitHub SSH keys do not authenticate GitHub REST API calls, configure these values via the **About** section on [github.com/tanmay9783/tanmay9783](https://github.com/tanmay9783/tanmay9783):
-
-- **Description:** `Full-Stack Developer & Software Engineer | Backend Systems, Distributed Architecture & Cloud Infrastructure`
-- **Website:** `https://github.com/tanmay9783/portfolio`
-- **Topics:** `full-stack`, `backend`, `distributed-systems`, `system-design`, `nestjs`, `rabbitmq`, `podman`, `webrtc`, `cryptography`, `terraform`, `aws`
+1. **Coditorium:** Container cold-start invocation latency exists on each submission; warm container pre-forking or microVM virtualization (e.g. Firecracker) are identified future milestones.
+2. **NijiSamvad:** Derives symmetric keys from a pre-shared room secret without an asymmetric Double Ratchet protocol (Signal Protocol); does not provide Perfect Forward Secrecy (PFS).
+3. **DropX:** In-memory `express.raw()` buffering caps single-file uploads at 100MB rather than using backpressure-controlled streaming pipelines.
+4. **Planrova:** Android alarms rely on `SCHEDULE_EXACT_ALARM` permissions and remain subject to aggressive OEM battery management overrides or user force-stops.
+5. **Sanjeevni AI:** Speech recognition accuracy depends on clinic acoustic noise; designed strictly as a preliminary intake tool rather than a standalone diagnostic device.
+6. **Terraform Multi-Env:** Deploys compute into default VPC subnets rather than provisioning custom multi-tier VPC topologies.

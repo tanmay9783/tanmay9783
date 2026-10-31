@@ -203,8 +203,8 @@ Technologies actively being studied and tested in lab environments:
 - **Problem Addressed:** Student academic productivity workflows suffer from tool fragmentation across disparate apps for schedules, timers, and notes. Furthermore, cloud-dependent planners become unusable in campus environments with intermittent connectivity.
 - **What I Implemented:** Architected a local-first study ecosystem featuring a lightweight web dashboard, a companion React Native mobile application, a native Android Kotlin bridge for system alarms, and OCR ingestion of handwritten study notes.
 - **Architecture & System Design:**
-  - **Local-First Distributed State:** Engineered offline-first local storage patterns ensuring full timetable and habit management functionality without network dependencies.
-  - **Android Native Alarm Bridge:** Implemented custom Kotlin modules (`AlarmManager`, `AlarmReceiver`) that interface with React Native to schedule exact system alarms using `setAlarmClock()` and Foreground Services, ensuring timers wake the device despite Android Doze mode.
+  - **Local-First State Management:** Designed local storage patterns allowing users to view timetables, check off daily habits, and run Pomodoro focus timers offline. Network connectivity is required only when synchronizing multi-device updates with Cloud Firestore or executing OCR analysis with the Groq Vision API.
+  - **Android Native Alarm Bridge:** Implemented custom Kotlin modules (`AlarmManager`, `AlarmReceiver`) interfacing with React Native to schedule exact system alarms via `setAlarmClock()` and Foreground Services. This reduces timer suppression during device idle states, though executions remain bounded by OS-level `SCHEDULE_EXACT_ALARM` permissions and vendor-specific OEM battery management policies.
   - **Zero-Virtual-DOM Web Runtime:** Built the desktop client in vanilla ES6 to ensure minimal memory overhead on resource-constrained hardware.
   - **Multimodal AI OCR Integration:** Connected an isolated proxy pipeline with Groq Vision API to digitize handwritten study notes and academic syllabi into structured task lists.
 - **Key Technical Decisions:**
@@ -224,11 +224,11 @@ Technologies actively being studied and tested in lab environments:
   - **Kiosk Interface:** Built with React 18, Three.js, and Web Speech API to provide an accessible, hands-free conversational interface for low-literacy patients.
   - **Localized Pain Mapping:** Developed an interactive 2D anatomical body SVG map with 1–10 severity sliders, translating visual patient inputs into standardized anatomical coordinates.
   - **Local-First Edge Storage:** Implemented local SQLite (`better-sqlite3`) storage on the kiosk node to persist demographic inputs, form responses, and anatomical coordinate logs locally. While core form logging functions without network access, multimodal AI extraction requires connectivity to reach Groq/LLaMA endpoints.
-  - **Separation of Concerns:** Built as an AI-assisted client-facing intake tier that structures patient dialogues into clinical SOAP summaries; designed to integrate asynchronously with **Swasya AI** (a separate companion clinical command center built for attending physicians).
+  - **Separation of Concerns:** Built as an AI-assisted client-facing intake tier that structures patient dialogues into clinical SOAP summaries; designed to integrate asynchronously with **Swasya AI** (a separate companion clinical command center built with FastAPI and MongoDB for attending physicians).
 - **Key Technical Decisions:**
   - Employed edge-deployed SQLite on the kiosk node to retain patient responses locally and mitigate data loss during connectivity dropouts.
-- **Current Limitations:** Speech recognition accuracy remains dependent on ambient clinic acoustic noise; the system is designed solely for preliminary history-taking and triage pre-screening, not autonomous clinical diagnosis.
-- **Tech Stack:** `React 18`, `Three.js`, `Node.js (Express)`, `FastAPI`, `SQLite (better-sqlite3)`, `Groq LLaMA 3.3`
+- **Current Limitations:** Speech recognition accuracy remains dependent on ambient clinic acoustic noise; the system is designed solely for preliminary history-taking and triage pre-screening, not a standalone diagnostic device.
+- **Tech Stack:** `React 18`, `Three.js`, `Node.js (Express)`, `SQLite (better-sqlite3)`, `Groq LLaMA 3.3`
 - **Repository:** [github.com/tanmay9783/Sanjeevni-AI](https://github.com/tanmay9783/Sanjeevni-AI)
 
 ---
@@ -339,7 +339,7 @@ sequenceDiagram
 - **Defense in Depth & Least Privilege:** Enforcing input sanitization and schema validation at all ingestion boundaries, running execution runtimes as non-root users with stripped Linux capabilities, and isolating sensitive secrets away from persistent application storage.
 - **Storage Strategy & Data Integrity:** Designing database schemas with foreign key referential integrity, indexing frequent query paths, using transactions for state mutations requiring atomicity, and employing distributed caches (Redis) strictly for read-heavy cache eviction patterns.
 - **Predictable API Contracts:** Adhering to predictable RESTful standards, consistent JSON error serialization formats, explicit HTTP status codes, and backward-compatible contract design.
-- **Fault Tolerance & Resource Discipline:** Designing worker pipelines that gracefully handle consumer disconnections, socket dropped frames, and external API timeouts without crashing host processes. Using bounded buffers and streams to prevent excessive memory consumption.
+- **Fault Tolerance & Resource Discipline:** Designing worker pipelines that gracefully handle consumer disconnections, socket dropped frames, and external API timeouts without crashing host processes. Enforcing strict request payload ceilings (such as capping `express.raw()` at 100MB in DropX) and connection rate limits to bound memory consumption under concurrent uploads.
 
 ---
 
