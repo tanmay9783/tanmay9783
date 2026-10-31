@@ -1,9 +1,9 @@
 <div align="center">
 
 # Tanmay Agrawal
-**Full-Stack Developer | Backend Engineering | Distributed Systems & Cloud Architecture**
+**Full-Stack Developer | Backend Engineering | Distributed Systems & Cloud Infrastructure**
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=1200&color=58A6FF&center=true&vCenter=true&width=620&lines=Full-Stack+Developer+%7C+B.Tech+CSE+%40+KIET;Architecting+Reliable+Backend+Services+%26+APIs;Designing+Real-Time+%26+Zero-Knowledge+Systems;AWS+Certified+AI+Practitioner+%7C+Cloud+%26+DevOps)](https://github.com/tanmay9783)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=1200&color=58A6FF&center=true&vCenter=true&width=620&lines=Full-Stack+Developer+%7C+B.Tech+CSE+%40+KIET;Backend+Engineering+%26+Distributed+Systems;RabbitMQ+%E2%80%A2+Podman+%E2%80%A2+PostgreSQL+%E2%80%A2+Redis;AWS+Certified+AI+Practitioner)](https://github.com/tanmay9783)
 
 <p align="center">
   <a href="https://www.linkedin.com/in/tanmay041/" target="_blank">
@@ -18,12 +18,8 @@
     <img src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
   </a>
   &nbsp;
-  <a href="https://leetcode.com/u/tanmay041/" target="_blank">
-    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=flat-square&logo=leetcode&logoColor=black" alt="LeetCode" />
-  </a>
-  &nbsp;
-  <a href="https://codeforces.com/profile/tanmay0412" target="_blank">
-    <img src="https://img.shields.io/badge/Codeforces-1F8ACB?style=flat-square&logo=codeforces&logoColor=white" alt="Codeforces" />
+  <a href="https://github.com/tanmay9783/portfolio" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-2563EB?style=flat-square&logo=googlechrome&logoColor=white" alt="Portfolio" />
   </a>
 </p>
 
@@ -33,252 +29,300 @@
 
 ### Executive Overview
 
-I am a Computer Science Engineering undergraduate at **KIET Group of Institutions**, focused on designing end-to-end web applications, robust backend architectures, and distributed systems. 
+I am a Computer Science Engineering undergraduate at **KIET Group of Institutions**, specializing in backend engineering, scalable application architecture, and cloud infrastructure.
 
-- **Engineering Scope:** I build reliable full-stack applications with an emphasis on API design, asynchronous processing, memory-efficient data pipelines, and real-time state synchronization.
-- **Architectural Mindset:** Passionate about low-latency system design, cryptographic privacy (zero-knowledge and end-to-end encryption), and isolated execution runtimes.
-- **Infrastructure & Cloud:** Hands-on experience containerizing services with Docker, writing declarative multi-environment infrastructure with Terraform on AWS, and exploring Kubernetes cluster management.
-- **Current Objective:** Seeking high-impact software engineering internships and collaborative opportunities where I can contribute to production-grade backend and full-stack systems.
+- **Engineering Focus:** I design resilient full-stack systems with strong emphasis on decoupled service communication, asynchronous task queues, secure process isolation, and clean API design.
+- **Architectural Mindset:** Practical experience implementing message brokering (RabbitMQ), sandboxed code execution (Rootless Podman), client-side cryptographic systems (WebCrypto API), and modular Infrastructure as Code (Terraform on AWS).
+- **Core Standard:** Prioritizing code maintainability, least-privilege security boundaries, and defensive system design over premature optimization or unsupported claims.
 
 ---
 
 ### Technical Competencies
 
-The following technologies represent tools and frameworks implemented across my production repositories and active engineering projects:
+#### Production & Implementation Stack
+Technologies verified and implemented across my active repositories and projects:
 
 <table>
   <tr>
-    <td width="24%"><strong>Languages</strong></td>
+    <td width="22%"><strong>Languages</strong></td>
     <td>
-      <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,java,py,postgres" alt="Languages" /></a>
+      <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,java,py,postgres,c,cpp" alt="Languages" /></a>
       <br/>
-      <sub>TypeScript, JavaScript (ES6+), Java, Python, SQL</sub>
+      <sub>TypeScript, JavaScript (ES6+), Java, Python, SQL, C, C++</sub>
     </td>
   </tr>
   <tr>
-    <td width="24%"><strong>Backend & Real-Time</strong></td>
+    <td width="22%"><strong>Backend & Real-Time</strong></td>
     <td>
       <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=nodejs,express,nestjs,postman" alt="Backend" /></a>
       <br/>
-      <sub>Node.js, Express.js, NestJS, RESTful APIs, Socket.IO, WebRTC, Asynchronous Event Loops</sub>
+      <sub>Node.js, Express.js, NestJS, REST APIs, Socket.IO, WebRTC</sub>
     </td>
   </tr>
   <tr>
-    <td width="24%"><strong>Databases & Messaging</strong></td>
+    <td width="22%"><strong>Databases & Messaging</strong></td>
     <td>
-      <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=postgres,mongodb,sqlite,redis,rabbitmq,prisma,firebase" alt="Databases and Queues" /></a>
+      <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=postgres,mongodb,sqlite,redis,rabbitmq,prisma" alt="Databases and Queues" /></a>
       <br/>
-      <sub>PostgreSQL, MongoDB Atlas, SQLite (better-sqlite3), Redis (Caching & Distributed Locking), RabbitMQ, Prisma ORM, Firebase</sub>
+      <sub>PostgreSQL, MongoDB, SQLite (better-sqlite3), Redis / Valkey, RabbitMQ (AMQP), Prisma ORM</sub>
     </td>
   </tr>
   <tr>
-    <td width="24%"><strong>Cloud & Infrastructure</strong></td>
+    <td width="22%"><strong>Cloud & Infrastructure</strong></td>
     <td>
-      <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,linux" alt="Cloud and DevOps" /></a>
+      <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=aws,docker,terraform,linux,git,github" alt="Cloud and DevOps" /></a>
       <br/>
-      <sub>AWS (EC2, S3, IAM, CloudWatch), Docker, Kubernetes, Terraform (IaC Modules), Linux Shell / Systems</sub>
+      <sub>AWS (EC2, S3, IAM), Docker, Rootless Podman, Terraform (IaC Workspaces), Linux Systems, Git, GitHub Actions</sub>
     </td>
   </tr>
   <tr>
-    <td width="24%"><strong>Frontend Engineering</strong></td>
+    <td width="22%"><strong>Frontend & Mobile</strong></td>
     <td>
       <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,html,css,vite" alt="Frontend" /></a>
       <br/>
-      <sub>React 18/19, Next.js, React Native (Expo), Tailwind CSS, Vite, Three.js, State Management</sub>
-    </td>
-  </tr>
-  <tr>
-    <td width="24%"><strong>Tooling & Versioning</strong></td>
-    <td>
-      <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=git,github" alt="Tools" /></a>
-      <br/>
-      <sub>Git, GitHub Actions (CI/CD Pipelines), WebCrypto API, npm/pnpm/yarn</sub>
+      <sub>React 18/19, Next.js, React Native (Expo), Tailwind CSS, Vite, Three.js</sub>
     </td>
   </tr>
 </table>
+
+#### Currently Deepening & Exploring
+Technologies actively being studied and tested in lab environments:
+- **Container Orchestration:** Kubernetes (declarative pod lifecycle, ingress controllers, service mesh).
+- **Advanced Distributed Systems:** Distributed consensus (Raft), database horizontal sharding, and event-driven microservices.
+- **Advanced Data Structures & Algorithms:** Graph algorithms, dynamic programming, and amortized complexity.
 
 ---
 
 ### Featured Engineering Projects
 
-#### 1. [Coditorium — Online Judge & Assessment Platform](https://github.com/tanmay9783/Coditorium)
-*Competitive programming, contest hosting, and automated code grading engine with isolated evaluation sandboxes.*
+#### 1. [Coditorium — Competitive Coding & Assessment Platform](https://github.com/tanmay9783/Coditorium) *(Flagship Project)*
+*Automated multi-language code grading and assessment engine featuring asynchronous job queues and isolated execution sandboxes.*
 
-- **Problem Statement:** Educational institutions and contest organizers require automated, cheat-resistant evaluation of multi-language student code submissions with low-latency scoring and strict hardware resource limits.
-- **Architecture & Implementation:**
-  - Designed an asynchronous submission pipeline that queues and decouples code submissions from client HTTP request lifecycles.
-  - Implemented an isolated container sandbox jail enforcing CPU time limits, memory boundaries, and standard I/O redirection to prevent arbitrary host exploitation and denial-of-service loops.
-  - Multi-language compilation and execution runner supporting C++, Java, Python, and JavaScript against hidden test vectors.
-  - Role-based access control (RBAC) separating administrative contest management and test case authoring from student candidate views.
-  - Real-time leaderboard state synchronized over WebSocket connections during active timed assessments.
-- **Tech Stack:** `React`, `Node.js`, `Express.js`, `Docker (Sandbox)`, `Redis`, `PostgreSQL`, `Prisma ORM`, `Socket.IO`
-- **Source Code:** [github.com/tanmay9783/Coditorium](https://github.com/tanmay9783/Coditorium)
-
-```
-[Student Submission] ➔ [API Gateway / Auth] ➔ [Redis Task Queue] ➔ [Sandbox Worker (Docker Jail)] ➔ [Test Diff & Verdict] ➔ [DB + WS Broadcast]
-```
-
----
-
-#### 2. [NijiSamvad — Zero-Knowledge E2EE Real-Time Messaging & WebRTC Mesh](https://github.com/tanmay9783/NijiSamvad)
-*Zero-database, cryptographically sovereign communication platform engineered with client-side AES-256-GCM encryption.*
-
-- **Problem Statement:** Mainstream collaboration platforms retain metadata, conversation transcripts, and file attachments in cloud-hosted databases, creating persistent vectors for data breach and credential exploitation.
-- **Architecture & Implementation:**
-  - **Zero Server Persistence:** Engineered an ephemeral signaling server operating in volatile memory with absolute zero relational or document database persistence.
-  - **Client-Side Cryptography:** Utilized browser-native WebCrypto API to execute client-side key derivation via PBKDF2 (SHA-256, 100,000 iterations) and symmetric authenticated encryption via AES-256-GCM.
-  - **Opaque Signal Relaying:** Ciphertext payloads transit the Node.js/Socket.IO gateway as opaque binary/string buffers without the server possessing keys or decryption ability.
-  - **WebRTC Multimedia Mesh:** Integrated direct peer-to-peer audio and video calling over DTLS-SRTP, using the signaling server strictly for ICE candidate and SDP offer/answer exchange.
-- **Tech Stack:** `React 19`, `Node.js 18+`, `Socket.IO 4.8`, `WebCrypto API (AES-256-GCM)`, `WebRTC`, `Tailwind CSS`
-- **Source Code:** [github.com/tanmay9783/NijiSamvad](https://github.com/tanmay9783/NijiSamvad)
+- **Problem Addressed:** Academic coding platforms face severe stability risks when evaluating arbitrary student code submissions. Running untrusted code on shared application hosts risks fork bombs, resource exhaustion, and privilege escalation, while synchronous execution causes severe API bottlenecks during high-traffic contests.
+- **What I Implemented:** Architected the end-to-end judge submission pipeline. Built a NestJS API that ingests code submissions, persists pending state in PostgreSQL via Prisma, and dispatches evaluation jobs to RabbitMQ. Implemented a dedicated execution worker service that dequeues tasks and runs compilation and evaluation inside rootless Podman containers.
+- **Architecture & System Design:**
+  - **Monorepo Structure:** Structured via Turborepo containing `apps/backend` (NestJS REST API), `apps/frontend` (React + Vite), `apps/execution-worker` (isolated runner), and `packages/shared` (domain contracts).
+  - **Asynchronous Task Queue:** Submission ingestion is fully decoupled from execution using RabbitMQ AMQP channels, ensuring API responsiveness under burst submission traffic.
+  - **Security Jail (Rootless Podman):** Untrusted code executes inside rootless Podman containers with dropped capabilities, isolated namespaces, explicit CPU quotas (`--cpus`), strict memory bounds (`--memory`), disabled network access (`--network none`), and execution timeouts.
+- **Key Technical Decisions:**
+  - Selected **RabbitMQ** over in-memory or Redis-based task queues to guarantee message persistence, worker acknowledgments (`ack`/`nack`), and channel-level flow control.
+  - Chose **Rootless Podman** instead of standard Docker to prevent root-daemon exposure and root privilege escalation vectors on the host system.
+- **Current Limitations:** Per-submission container initialization introduces invocation latency (200–400ms); warm container pooling and microVM virtualization (e.g., Firecracker) are identified future milestones.
+- **Tech Stack:** `NestJS`, `React`, `Vite`, `TypeScript`, `PostgreSQL`, `Prisma ORM`, `RabbitMQ`, `Redis/Valkey`, `Rootless Podman`
+- **Repository:** [github.com/tanmay9783/Coditorium](https://github.com/tanmay9783/Coditorium)
 
 ---
 
-#### 3. [DropX — Ephemeral Cross-Device Data & Clipboard Streaming Platform](https://github.com/tanmay9783/dropx)
-*High-speed local/remote file streaming and clipboard synchronization system with automated TTL memory cleanup.*
+#### 2. [NijiSamvad — Zero-Knowledge E2EE Communication & WebRTC Mesh](https://github.com/tanmay9783/NijiSamvad)
+*Ephemeral, zero-database real-time messaging and peer-to-peer WebRTC audio/video communication platform.*
 
-- **Problem Statement:** Moving files and clipboard text across heterogeneous operating systems (iOS, Android, Windows, macOS, Linux) typically forces users into account sign-ups, email attachments, or permanent cloud drive clutter.
-- **Architecture & Implementation:**
-  - **Memory-Bounded Streaming Pipeline:** Implemented Node.js chunked stream handlers (`busboy`) piping multipart binary files directly to disk/network without holding complete multi-gigabyte payloads in heap memory.
-  - **Zero-Friction Discovery:** Built dynamic QR code generation and Crockford-style ambiguity-free 6-character room code identifiers (omitting I, L, O, 0, 1) for rapid pairing.
-  - **Distributed State & TTL Eviction:** Managed ephemeral session state and concurrent device connections using Redis locks; automated background cron tasks and TTL monitors ensure complete wiping of file data and active channels upon session termination.
-  - **Zero-Knowledge Encryption:** Encrypted payloads client-side with AES-256-GCM before transport.
+- **Problem Addressed:** Centralized collaboration applications persist user messages, identifiers, and media metadata indefinitely in cloud databases, leaving sensitive communication exposed to database leaks and server-side compromise.
+- **What I Implemented:** Engineered a zero-database communication platform combining client-side cryptographic key derivation, ephemeral WebSocket signaling, and direct peer-to-peer WebRTC audio/video mesh calling.
+- **Architecture & System Design:**
+  - **Zero Server Persistence:** The Node.js signaling server operates strictly in volatile RAM, holding active socket rooms in memory with zero relational or document database retention.
+  - **Client-Side Cryptographic Pipeline:** Browser clients derive symmetric 256-bit AES-GCM keys locally from high-entropy room secrets using the Web Crypto API (`crypto.subtle`) via PBKDF2 (SHA-256, 100,000 iterations).
+  - **Opaque Signal Relaying:** Chat messages and file payloads are encrypted client-side with AES-256-GCM using unique 12-byte initialization vectors (IVs) and transited over Socket.IO as opaque ciphertext buffers.
+  - **WebRTC Peer Mesh:** Audio and video streams route directly between client browsers using DTLS-SRTP encryption, using the signaling server strictly for SDP offer/answer exchange and ICE candidates.
+- **Key Technical Decisions:**
+  - Utilized native browser **Web Crypto API** rather than third-party JavaScript crypto bundles to leverage hardware-accelerated cryptographic primitives and eliminate supply-chain vulnerabilities.
+  - Implemented visual SHA-256 fingerprint verification (formatted as human-readable numerical blocks) to allow participants to detect man-in-the-middle tampering out-of-band.
+- **Current Limitations:** Relies on a pre-shared room secret between participants; does not implement an asymmetric Double Ratchet protocol (e.g., Signal Protocol) and therefore does not provide Perfect Forward Secrecy (PFS).
+- **Tech Stack:** `React 19`, `Node.js 18+`, `Socket.IO 4.8`, `Web Crypto API (AES-256-GCM)`, `WebRTC`, `Tailwind CSS`
+- **Repository:** [github.com/tanmay9783/NijiSamvad](https://github.com/tanmay9783/NijiSamvad)
+
+---
+
+#### 3. [DropX — Ephemeral Cross-Device Data & File Sharing Utility](https://github.com/tanmay9783/dropx)
+*Frictionless local and remote file sharing utility featuring ambiguity-free room discovery and automated TTL memory cleanups.*
+
+- **Problem Addressed:** Transferring files and clipboard text between heterogeneous devices (iOS, Android, Windows, macOS, Linux) typically forces users through account registrations, cloud drive uploads, or email attachments, leaving permanent data trails on third-party servers.
+- **What I Implemented:** Developed an ephemeral cross-device data bridge enabling quick device pairing via QR codes or 6-character room codes, supporting temporary file uploads and clipboard synchronization with automated session eviction.
+- **Architecture & System Design:**
+  - **Discovery & Pairing Engine:** Generates Crockford-style Base32 room codes that explicitly omit ambiguous visual characters (`0`, `O`, `1`, `I`, `L`) to eliminate cross-device typing errors.
+  - **Upload Pipeline:** Upload routes receive binary payloads via `express.raw()` capped at 100MB, writing temporary files to local disk storage while indexing metadata in SQLite/file repositories.
+  - **Automated Lifecycle Eviction:** Room sessions are bounded by a configurable TTL (default 120 minutes); automated periodic background cleanups purge active WebSocket rooms and delete associated disk files upon session expiry.
+- **Key Technical Decisions:**
+  - Integrated Redis state synchronization to coordinate room membership, active participant presence, and rate limits across server processes.
+  - Applied client-side AES-256-GCM encryption before transport to secure payloads during transit.
+- **Current Limitations:** Upload handler buffers payload chunks in memory via `express.raw()` rather than streaming multi-part chunks directly through backpressure-controlled streams, capping maximum single-file upload size to 100MB.
 - **Tech Stack:** `Node.js`, `Express.js`, `React`, `Vite`, `Tailwind CSS`, `Redis`, `Socket.IO`, `Web Crypto API`
-- **Source Code:** [github.com/tanmay9783/dropx](https://github.com/tanmay9783/dropx)
+- **Repository:** [github.com/tanmay9783/dropx](https://github.com/tanmay9783/dropx)
 
 ---
 
-#### 4. [Planrova — Local-First Academic Productivity & Study Ecosystem](https://github.com/tanmay9783/planrova)
+#### 4. [Planrova — Local-First Academic Productivity System](https://github.com/tanmay9783/planrova)
 *Multi-platform academic management system combining lightweight local-first web runtimes with native Android alarm bridges.*
 
-- **Problem Statement:** Students face tool fragmentation across separate apps for timetables, Pomodoro sessions, and notes, while cloud-dependent tools drop inputs during high-latency or disconnected campus network conditions.
-- **Architecture & Implementation:**
-  - **Local-First Distributed Architecture:** Designed offline-first local storage and synchronization patterns that retain full responsiveness without blocking the UI thread during network dropouts.
-  - **Android Native Kotlin Bridges:** Integrated native `AlarmManager` and Foreground Services to build tamper-proof focus and study session alarms capable of bypassing aggressive OEM battery killers.
-  - **Zero-Virtual-DOM Core:** Architected the web dashboard in vanilla ES6 to minimize memory footprint and execution overhead on low-spec campus hardware.
-  - **Multimodal AI Vision Integration:** Connected an isolated proxy pipeline with Groq Vision OCR to digitize handwritten academic schedules, notes, and study goals into structured digital records.
+- **Problem Addressed:** Student academic productivity workflows suffer from tool fragmentation across disparate apps for schedules, timers, and notes. Furthermore, cloud-dependent planners become unusable in campus environments with intermittent connectivity.
+- **What I Implemented:** Architected a local-first study ecosystem featuring a lightweight web dashboard, a companion React Native mobile application, a native Android Kotlin bridge for system alarms, and OCR ingestion of handwritten study notes.
+- **Architecture & System Design:**
+  - **Local-First Distributed State:** Engineered offline-first local storage patterns ensuring full timetable and habit management functionality without network dependencies.
+  - **Android Native Alarm Bridge:** Implemented custom Kotlin modules (`AlarmManager`, `AlarmReceiver`) that interface with React Native to schedule exact system alarms using `setAlarmClock()` and Foreground Services, ensuring timers wake the device despite Android Doze mode.
+  - **Zero-Virtual-DOM Web Runtime:** Built the desktop client in vanilla ES6 to ensure minimal memory overhead on resource-constrained hardware.
+  - **Multimodal AI OCR Integration:** Connected an isolated proxy pipeline with Groq Vision API to digitize handwritten study notes and academic syllabi into structured task lists.
+- **Key Technical Decisions:**
+  - Built custom native Android Kotlin alarm bridges rather than relying on generic JavaScript timers, which are suppressed when the device enters deep sleep.
+- **Current Limitations:** Exact alarms rely on Android OS permissions (`SCHEDULE_EXACT_ALARM`) and remain subject to aggressive OEM battery optimization overrides or manual application force-stops.
 - **Tech Stack:** `React Native (Expo 54)`, `Android Native (Kotlin)`, `Vanilla ES6`, `Cloud Firestore`, `Groq Vision API`
-- **Source Code:** [github.com/tanmay9783/planrova](https://github.com/tanmay9783/planrova)
+- **Repository:** [github.com/tanmay9783/planrova](https://github.com/tanmay9783/planrova)
 
 ---
 
-#### 5. [Sanjeevni AI & Swasya AI — Autonomous Primary Healthcare Intake & Triage System](https://github.com/tanmay9783/Sanjeevni-AI)
-*Edge-deployed 3D conversational intake kiosk synchronized with a clinical hospital command center.*
+#### 5. [Sanjeevni AI — Multimodal Patient Intake Kiosk](https://github.com/tanmay9783/Sanjeevni-AI)
+*Autonomous primary healthcare intake kiosk featuring interactive 3D virtual avatars, speech recognition, and localized pain mapping.*
 
-- **Problem Statement:** Primary Healthcare Centres (PHCs) in developing regions face patient-to-doctor ratios exceeding 1:11,000, forcing medical officers to spend 70% of consultation time on repetitive manual intake documentation.
-- **Architecture & Implementation:**
-  - **Multimodal Conversational Intake:** Engineered a hands-free multilingual voice dialogue interface (Web Speech API) combined with an interactive Three.js 3D doctor avatar to assist low-literacy patients.
-  - **Interactive Anatomical Pain Mapping:** Developed a 3D anatomical model interface enabling patients to visually demarcate pain coordinates and intensity before physical consultation.
-  - **Clinical Decision Support & SOAP Handoff:** Structured voice dialogues into formatted clinical SOAP (Subjective, Objective, Assessment, Plan) records and risk-stratified triage summaries via LLaMA models.
-  - **Dual-Tier Edge/Cloud Storage:** Deployed lightweight SQLite (`better-sqlite3`) on local kiosk nodes for zero-latency edge intake, asynchronously synchronizing clinical records with a centralized MongoDB Atlas command center.
-- **Tech Stack:** `React 18`, `Three.js`, `Node.js (Express 5)`, `FastAPI`, `Groq LLaMA 3.3`, `SQLite`, `MongoDB Atlas`
-- **Source Code:** [github.com/tanmay9783/Sanjeevni-AI](https://github.com/tanmay9783/Sanjeevni-AI)
+- **Problem Addressed:** High patient volumes in community health clinics lead to extended waiting periods and diagnostic bottlenecks, where healthcare workers spend substantial time gathering routine demographic and symptom histories from low-literacy patients.
+- **What I Implemented:** Built the **Sanjeevni AI** patient intake kiosk—an interactive web application designed for clinic entry points, featuring a 3D animated assistant, speech recognition in Hindi/Hinglish/English, and an interactive 2D anatomical body pain map.
+- **Architecture & System Design:**
+  - **Kiosk Interface:** Built with React 18, Three.js, and Web Speech API to provide an accessible, hands-free conversational interface for low-literacy patients.
+  - **Localized Pain Mapping:** Developed an interactive 2D anatomical body SVG map with 1–10 severity sliders, translating visual patient inputs into standardized anatomical coordinates.
+  - **Local-First Edge Storage:** Implemented local SQLite (`better-sqlite3`) storage on the kiosk engine to ensure uninterrupted intake collection even during clinic internet dropouts.
+  - **Separation of Concerns:** Built as an autonomous intake tier that formats patient dialogues into structured SOAP summaries, designed to asynchronously feed into **Swasya AI** (a separate companion clinical command center built for attending physicians).
+- **Key Technical Decisions:**
+  - Employed edge-deployed SQLite on the kiosk node so intake continues seamlessly during clinic connectivity outages.
+- **Current Limitations:** Speech recognition accuracy remains dependent on ambient clinic acoustic noise; the system is designed solely for preliminary history-taking and triage pre-screening, not autonomous clinical diagnosis.
+- **Tech Stack:** `React 18`, `Three.js`, `Node.js (Express)`, `FastAPI`, `SQLite (better-sqlite3)`, `Groq LLaMA 3.3`
+- **Repository:** [github.com/tanmay9783/Sanjeevni-AI](https://github.com/tanmay9783/Sanjeevni-AI)
 
 ---
 
-### Systems Architecture & Engineering Thinking
+#### 6. [Terraform Multi-Environment AWS Infrastructure](https://github.com/tanmay9783/terraform-multi-environment)
+*Modular Infrastructure as Code repository provisioning parameterized cloud environments across Dev and Prod.*
 
-#### Diagram 1: Production Multi-Tier Web & Asynchronous Processing Architecture
-The architectural workflow below represents how I structure scalable, decoupled web applications from user ingress to state persistence and background execution:
+- **Problem Addressed:** Manual cloud provisioning produces configuration drift, inconsistent security policies, and deployment errors between development and production environments.
+- **What I Implemented:** Developed modular Terraform configurations that provision EC2 instances, VPC associations, and security groups dynamically across isolated environments.
+- **Architecture & System Design:** Utilizes Terraform Workspaces and environment-specific `.tfvars` files (`terraform.tfvars.dev`, `terraform.tfvars.prod`) to decouple configuration values from infrastructure definitions, querying AWS dynamic data sources (`aws_subnets`, `aws_ami`) to eliminate hardcoded identifiers.
+- **Key Technical Decisions:** Decoupled environment state into dedicated workspace state partitions, ensuring zero risk of accidental state collision between development and production runs.
+- **Current Limitations:** Currently operates within default VPC subnets rather than provisioning custom multi-tier VPC topologies with private subnets, NAT gateways, and public load balancers.
+- **Tech Stack:** `Terraform (HCL)`, `AWS (EC2, VPC, IAM)`, `Linux Shell`
+- **Repository:** [github.com/tanmay9783/terraform-multi-environment](https://github.com/tanmay9783/terraform-multi-environment)
+
+---
+
+### Systems Architecture & Execution Lifecycle
+
+#### Diagram 1: Coditorium Judge Execution Pipeline
+The architectural flow below details the end-to-end decoupled lifecycle of an untrusted code submission in **Coditorium**:
 
 ```mermaid
 flowchart TD
-    subgraph ClientTier["Client Layer"]
-        A["SPA / Next.js Web Client"]
-        B["Mobile Client (React Native)"]
+    subgraph ClientLayer["Client Tier"]
+        UI["Student / Contestant Portal (React / Vite)"]
     end
 
-    subgraph IngressTier["Ingress & Gateway Layer"]
-        C["Reverse Proxy / CDN (SSL Termination & Compression)"]
-        D["API Gateway (Auth Validation, Rate Limiting & Routing)"]
+    subgraph GatewayLayer["NestJS API Layer"]
+        CTRL["Submission Controller & Auth Guard (JWT / RBAC)"]
+        RATELIMIT["Rate Limiter & Session Guard (Redis / Valkey)"]
+        PROD["RabbitMQ AMQP Producer"]
     end
 
-    subgraph ServiceTier["Application Service Layer"]
-        E["Core REST / GraphQL API Services (Node.js / Express / NestJS)"]
-        F["Real-Time Gateway (Socket.IO / WebRTC Signaling)"]
+    subgraph StateTier["Data Persistence"]
+        PG[("PostgreSQL Database (Prisma ORM)")]
     end
 
-    subgraph StateTier["Data & Messaging Infrastructure"]
-        G[("Relational Storage (PostgreSQL / Prisma)")]
-        H[("Distributed Cache (Redis - Sessions, Keys, Rate Limits)")]
-        I["Message Broker / Task Queue (RabbitMQ / BullMQ)"]
-        J["Asynchronous Background Workers"]
+    subgraph QueueBroker["Task Messaging Broker"]
+        RABBIT["RabbitMQ Submission Queue (AMQP)"]
     end
 
-    subgraph ExternalTier["External Cloud Services"]
-        K["Cloud Storage (AWS S3)"]
-        L["External AI / Third-Party APIs"]
+    subgraph ExecutionLayer["Execution Service (apps/execution-worker)"]
+        WORKER["Worker Consumer Service"]
+        PODMAN["Rootless Podman Sandbox\n(--memory, --cpus, --network none, timeout)"]
+        DIFF["Test Vector Evaluator & Output Diff Checker"]
+        VERDICT["Verdict Classifier (AC, WA, TLE, MLE, CE, RE)"]
     end
 
-    A --> C
-    B --> C
-    C --> D
-    D --> E
-    A <--> F
-    E <--> H
-    E --> G
-    E --> I
-    I --> J
-    J --> G
-    E --> K
-    E --> L
+    UI -->|"1. Submit Code Payload (HTTP POST)"| CTRL
+    CTRL -->|"2. Verify Token & Rate Limit"| RATELIMIT
+    CTRL -->|"3. Persist State (PENDING)"| PG
+    CTRL -->|"4. Dispatch Task"| PROD
+    PROD -->|"5. Enqueue Message"| RABBIT
+    RABBIT -->|"6. Consume Task"| WORKER
+    WORKER -->|"7. Spawn Container"| PODMAN
+    PODMAN -->|"8. Execution Output"| DIFF
+    DIFF --> VERDICT
+    VERDICT -->|"9. Persist Verdict & Metrics"| PG
+    VERDICT -.->|"10. Push Result Notification"| UI
 ```
 
-#### Diagram 2: Coditorium Sandboxed Online Judge Execution Pipeline
-The lifecycle below illustrates the concrete execution flow implemented for untrusted user code compilation and automated evaluation in **Coditorium**:
+> **Technical Flow:** Submissions are ingested via NestJS, validated against rate limits in Redis/Valkey, and persisted in PostgreSQL as `PENDING`. An AMQP message is published to RabbitMQ, decoupling the HTTP request cycle from execution. An independent execution worker consumes the message, spawns an isolated Rootless Podman container enforcing strict cgroups and network isolation, evaluates stdout/stderr against test vectors, and commits the final verdict.
+
+---
+
+#### Diagram 2: NijiSamvad Cryptographic Key Derivation & Ephemeral Signaling
+The sequence below illustrates the client-side cryptographic key derivation and zero-database relay lifecycle implemented in **NijiSamvad**:
 
 ```mermaid
-flowchart LR
-    subgraph UserInterface["Client Experience"]
-        UI["Code Editor & Contest View (React)"]
-    end
+sequenceDiagram
+    autonumber
+    actor Alice as Peer A (Client Browser)
+    participant Server as Ephemeral Signaling Server (Socket.IO)
+    actor Bob as Peer B (Client Browser)
 
-    subgraph Ingestion["API & Queue Ingestion"]
-        API["Express API Server"]
-        AUTH["JWT Session & RBAC Verification"]
-        QUEUE["Redis / BullMQ Submission Queue"]
-    end
+    Note over Alice,Bob: 1. Out-of-Band Room Secret Exchange
+    Alice->>Alice: Derive AES-256-GCM Key & Auth Hash via PBKDF2 (SHA-256, 100k iter)
+    Bob->>Bob: Derive AES-256-GCM Key & Auth Hash via PBKDF2 (SHA-256, 100k iter)
 
-    subgraph ExecutionCore["Isolated Sandboxed Judge Engine"]
-        DISPATCH["Worker Job Dispatcher"]
-        JAIL["Isolated Container Sandbox (Strict cgroups / RAM / CPU limits)"]
-        RUNNER["Multi-Language Compiler & Runner (C++, Java, Python, JS)"]
-        EVAL["Test Vector Evaluator & Output Diff Checker"]
-        VERDICT["Verdict Classifier (AC, WA, TLE, MLE, CE)"]
-    end
+    Note over Alice,Bob: 2. Ephemeral Room Connection (Zero Server Persistence)
+    Alice->>Server: join-room (roomName, authHash)
+    Bob->>Server: join-room (roomName, authHash)
+    Server-->>Alice: user-joined (Bob)
 
-    subgraph PersistenceAndEvents["Persistence & Broadcast"]
-        DB[("PostgreSQL Database (Submissions & Problem Bank)")]
-        EVENT["Socket.IO Event Broadcaster"]
-        BOARD["Live Contest Leaderboard"]
-    end
+    Note over Alice,Bob: 3. WebRTC Peer Mesh Signaling (DTLS-SRTP)
+    Alice->>Server: sdp-offer (relayed as opaque JSON)
+    Server->>Bob: sdp-offer
+    Bob->>Server: sdp-answer (relayed as opaque JSON)
+    Server->>Alice: sdp-answer
+    Alice->>Bob: Direct P2P Audio / Video Stream (Media Mesh)
 
-    UI -->|"Submit Code Payload"| API
-    API --> AUTH
-    AUTH -->|"Enqueue Job"| QUEUE
-    QUEUE -->|"Dispatch Task"| DISPATCH
-    DISPATCH -->|"Spin Up Container"| JAIL
-    JAIL --> RUNNER
-    RUNNER --> EVAL
-    EVAL --> VERDICT
-    VERDICT -->|"Persist Verdict & Stats"| DB
-    VERDICT -->|"Emit Result Event"| EVENT
-    EVENT -->|"Stream Results"| UI
-    EVENT -->|"Live Rank Update"| BOARD
+    Note over Alice,Bob: 4. Encrypted Text & File Transport
+    Alice->>Alice: Encrypt message payload with AES-256-GCM (Random 12-byte IV)
+    Alice->>Server: send-message {iv, ciphertext}
+    Server->>Bob: receive-message {iv, ciphertext}
+    Note over Server: Server acts as blind relay in volatile RAM; zero database retention
+    Bob->>Bob: Decrypt payload using local in-memory AES Key
 ```
+
+> **Technical Flow:** Peer clients independently derive identical 256-bit AES-GCM encryption keys and room authentication hashes from a shared secret using browser-native Web Crypto PBKDF2. The Socket.IO server acts purely as an ephemeral signaling conduit in volatile memory, relaying SDP payloads for direct WebRTC peer connections and passing encrypted message blobs without possessing decryption capabilities or database storage.
 
 ---
 
 ### Core Engineering Principles
 
-In developing software, I adhere to the following principles to ensure stability, maintainability, and security:
+- **Modularity & Decoupled Responsibilities:** Architecting systems with strict boundaries between transport controllers, domain business logic, and persistence layers. Business workflows remain decoupled from specific database engines or communication protocols.
+- **Defense in Depth & Least Privilege:** Enforcing input sanitization and schema validation at all ingestion boundaries, running execution runtimes as non-root users with stripped Linux capabilities, and isolating sensitive secrets away from persistent application storage.
+- **Storage Strategy & Data Integrity:** Designing database schemas with foreign key referential integrity, indexing frequent query paths, using transactions for state mutations requiring atomicity, and employing distributed caches (Redis) strictly for read-heavy cache eviction patterns.
+- **Predictable API Contracts:** Adhering to predictable RESTful standards, consistent JSON error serialization formats, explicit HTTP status codes, and backward-compatible contract design.
+- **Fault Tolerance & Resource Discipline:** Designing worker pipelines that gracefully handle consumer disconnections, socket dropped frames, and external API timeouts without crashing host processes. Using bounded buffers and streams to prevent excessive memory consumption.
 
-- **Modularity & Separation of Concerns:** Designing software with decoupled controllers, business logic services, and data access layers. Business logic remains independent of transport protocols and database engines.
-- **Defense in Depth & Zero-Knowledge Architecture:** Validating and sanitizing inputs at application boundaries (Zod/Joi schema validation), enforcing principle of least privilege in cloud IAM policies, and adopting zero-knowledge client-side encryption when handling sensitive user communication.
-- **Storage Strategy & Database Integrity:** Modeling schemas with strict referential constraints, indexing frequent query paths, using transactions for state mutations that require atomicity, and layering Redis for read-heavy cache eviction patterns.
-- **Strict API Contracts:** Adhering to predictable RESTful conventions, consistent JSON error serialization schemas, and backward-compatible versioning.
-- **Graceful Failure & Resilience:** Constructing fault-tolerant background pipelines where worker failures, socket disconnects, or third-party API outages fail safely without terminating host processes.
-- **Resource Discipline:** Avoiding memory bloat by processing large payloads via streams and bounded buffers rather than loading whole entities into heap memory.
+---
+
+### 🧮 Competitive Programming & Problem Solving
+
+<div align="center">
+  <p align="center">
+    <a href="https://leetcode.com/u/tanmay041/" target="_blank">
+      <img src="https://img.shields.io/badge/LeetCode-tanmay041-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode" />
+    </a>
+    &nbsp;
+    <a href="https://codeforces.com/profile/tanmay0412" target="_blank">
+      <img src="https://img.shields.io/badge/Codeforces-tanmay0412-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces" />
+    </a>
+    &nbsp;
+    <a href="https://www.codechef.com/users/tanmay041" target="_blank">
+      <img src="https://img.shields.io/badge/CodeChef-tanmay041-5B4638?style=for-the-badge&logo=codechef&logoColor=white" alt="CodeChef" />
+    </a>
+    &nbsp;
+    <a href="https://www.hackerrank.com/tanmay041" target="_blank">
+      <img src="https://img.shields.io/badge/HackerRank-tanmay041-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white" alt="HackerRank" />
+    </a>
+  </p>
+
+  <p align="center">
+    <img width="46%" src="https://leetcard.jacoblin.cool/tanmay041?theme=dark" alt="LeetCode Stats" />
+    &nbsp;&nbsp;
+    <img width="46%" src="https://codeforces-readme-stats.vercel.app/api/card?username=tanmay0412&theme=tokyonight" alt="Codeforces Stats" />
+  </p>
+</div>
 
 ---
 
@@ -288,28 +332,28 @@ In developing software, I adhere to the following principles to ensure stability
   <tr>
     <td width="50%">
       <h4>☁️ AWS Certified AI Practitioner</h4>
-      <p>Demonstrated foundational understanding of artificial intelligence, machine learning concepts, and AWS cloud AI/ML infrastructure and security services.</p>
+      <p>Validated foundational knowledge of machine learning architectures, cloud artificial intelligence services, security controls, and responsible AI system design on AWS.</p>
     </td>
     <td width="50%">
       <h4>🏆 Top 10 Finalist — National Hackathon (NIT Jalandhar)</h4>
-      <p>Recognized among top nationwide teams for prototyping and presenting a high-throughput, innovative software solution evaluated by industry judges.</p>
+      <p>Recognized among nationwide teams for prototyping and presenting a high-throughput, innovative software solution evaluated by industry judges.</p>
     </td>
   </tr>
   <tr>
     <td width="50%">
       <h4>📜 AWS Academy Graduate — Generative AI Foundations</h4>
-      <p>Comprehensive training on foundation models, prompt engineering, fine-tuning methodologies, and responsible AI system architecture.</p>
+      <p>Coursework covering foundation model fine-tuning concepts, prompt engineering architectures, and cloud-hosted LLM deployment patterns.</p>
     </td>
     <td width="50%">
       <h4>🏗️ Modular Infrastructure as Code (Terraform)</h4>
-      <p>Authored fully parameterized, multi-environment AWS infrastructure modules with clean variable separation and zero hardcoded configuration state.</p>
+      <p>Authored parameterized multi-environment AWS infrastructure configurations using Terraform workspaces, data-source discovery, and isolated state files.</p>
     </td>
   </tr>
 </table>
 
 ---
 
-### GitHub Analytics & Activity
+### GitHub Analytics & Contribution Activity
 
 <div align="center">
 
@@ -336,62 +380,11 @@ In developing software, I adhere to the following principles to ensure stability
 
 ---
 
-### 🧮 Competitive Programming & Problem Solving
-
 <div align="center">
-  <p align="center">
-    <a href="https://leetcode.com/u/tanmay041/" target="_blank">
-      <img src="https://img.shields.io/badge/LeetCode-tanmay041-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode" />
-    </a>
-    &nbsp;
-    <a href="https://codeforces.com/profile/tanmay0412" target="_blank">
-      <img src="https://img.shields.io/badge/Codeforces-tanmay0412-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces" />
-    </a>
-    &nbsp;
-    <a href="https://www.codechef.com/users/tanmay041" target="_blank">
-      <img src="https://img.shields.io/badge/CodeChef-tanmay041-5B4638?style=for-the-badge&logo=codechef&logoColor=white" alt="CodeChef" />
-    </a>
-    &nbsp;
-    <a href="https://www.hackerrank.com/tanmay041" target="_blank">
-      <img src="https://img.shields.io/badge/HackerRank-tanmay041-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white" alt="HackerRank" />
-    </a>
+  <p>
+    <em>"Focused on clean architecture, resilient data pipelines, and defensible engineering choices."</em>
   </p>
-
-  <p align="center">
-    <img width="46%" src="https://leetcard.jacoblin.cool/tanmay041?theme=dark&ext=heatmap" alt="LeetCode Stats" />
-    &nbsp;&nbsp;
-    <img width="46%" src="https://codeforces-readme-stats.vercel.app/api/card?username=tanmay0412&theme=tokyonight" alt="Codeforces Stats" />
+  <p>
+    <strong>Tanmay Agrawal</strong> &bull; <a href="https://www.linkedin.com/in/tanmay041/">LinkedIn</a> &bull; <a href="https://github.com/tanmay9783">GitHub</a> &bull; <a href="mailto:tanmayagrawal0412@gmail.com">tanmayagrawal0412@gmail.com</a>
   </p>
 </div>
-
----
-
-### Currently Investigating & Exploring
-
-- **Advanced Data Structures & Algorithms:** Deepening graph traversal paradigms, dynamic programming, and amortized complexity analysis.
-- **Distributed Systems Architecture:** Studying consensus protocols, event-driven architectures with message brokers, and horizontal data partitioning (sharding).
-- **Cloud Infrastructure & Kubernetes:** Practicing declarative container orchestration, pod autoscaling, ingress controllers, and automated CI/CD deployment pipelines on AWS.
-
----
-
-### Professional Collaboration & Contact
-
-I am open to technical discussions, open-source collaboration, and software engineering opportunities.
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/tanmay041/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="mailto:tanmayagrawal0412@gmail.com">
-    <img src="https://img.shields.io/badge/Email_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://github.com/tanmay9783">
-    <img src="https://img.shields.io/badge/GitHub_Profile-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  </a>
-</p>
-
-<p align="center">
-  <em>"Engineered with a focus on clean architecture, resilient data pipelines, and scalable software systems."</em>
-</p>

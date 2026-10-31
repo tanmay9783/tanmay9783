@@ -11,7 +11,9 @@ This guide provides technical specifications, operational status, and deployment
 | **Readme Typing SVG** | Dynamic animated header typing title | `https://readme-typing-svg.demolab.com` | Verified 200 OK. Hosted on high-availability demolab edge. |
 | **SkillIcons.dev** | High-definition dark-mode tech stack icons | `https://skillicons.dev/icons?i=...` | Verified 200 OK. Cached globally via Cloudflare CDN. |
 | **GitHub Readme Streak Stats** | Live streak and contribution consistency tracker | `https://streak-stats.demolab.com/?user=tanmay9783` | Verified 200 OK. Official demolab production deployment. |
-| **GitHub Readme Stats & Top Langs** | Aggregated repository stars, commits, and language ratios | `https://github-readme-stats-eight-theta.vercel.app/api?username=tanmay9783` | Active mirror. (Public `github-readme-stats.vercel.app` often suffers 503 rate-limiting; see fallback guide below). |
+| **GitHub Readme Stats & Top Langs** | Aggregated repository stars, commits, and language ratios | `https://github-readme-stats-eight-theta.vercel.app/api?username=tanmay9783` | Verified 200 OK. Configured with `#0D1117` GitHub dark theme matching. |
+| **LeetCode Card (JacobLin)** | Real-time LeetCode problem solving metrics | `https://leetcard.jacoblin.cool/tanmay041?theme=dark` | Verified 200 OK. Dark theme with problem distribution. |
+| **Codeforces Stats Card** | Live contest rating and rank visualization | `https://codeforces-readme-stats.vercel.app/api/card?username=tanmay0412` | Verified 200 OK. Tokyonight theme with dark background. |
 | **Shields.io** | Clean action buttons and contact links | `https://img.shields.io/badge/...` | High-reliability global badge CDN. |
 | **Platane/snk** | Dynamic contribution grid snake eating commit tiles | Automated GitHub Action committing to `output` branch | Self-hosted inside repository; zero external API dependency. |
 
@@ -21,8 +23,8 @@ This guide provides technical specifications, operational status, and deployment
 
 The contribution snake animation is powered by [`Platane/snk`](https://github.com/Platane/snk), generating animated SVGs based on your real GitHub contribution graph.
 
-### Step 1: Ensure the Workflow File is in Place
-The workflow configuration is created at:
+### Step 1: Workflow Configuration
+The workflow configuration is committed at:
 ```
 .github/workflows/snake.yml
 ```
@@ -45,20 +47,20 @@ GitHub Actions needs permission to push the generated SVGs to your repository's 
 4. Once completed (typically ~30 seconds), a new orphan branch named `output` will be created automatically containing:
    - `github-contribution-grid-snake.svg`
    - `github-contribution-grid-snake-dark.svg`
-5. Your profile README is already pre-configured to render these SVGs automatically with light/dark mode adaptation.
+5. Your profile README is already pre-configured with `<picture>` tags to render these SVGs automatically with light/dark mode adaptation.
 
 ---
 
 ## 3. GitHub Readme Stats Resilience & Fallback
 
-### Why Rate-Limiting Occurs
-The default public URL `https://github-readme-stats.vercel.app` handles millions of global requests daily and periodically encounters GitHub API rate limits (returning `HTTP Error 503: Service Unavailable`).
+### Why Rate-Limiting Occurs on Upstream Instances
+The upstream public URL `https://github-readme-stats.vercel.app` handles millions of global requests daily and periodically encounters GitHub API rate limits (returning `HTTP Error 503: Service Unavailable`).
 
-### Solution A: Use the Pre-configured Active Mirror (Default)
+### Active Mirror Configuration (Default)
 Your profile is configured to use an active edge mirror (`github-readme-stats-eight-theta.vercel.app`) styled with the cohesive `#0D1117` GitHub dark theme.
 
-### Solution B: Deploy Your Own 1-Click Vercel Instance (Recommended for 100% Uptime)
-If you wish to guarantee zero downtime and maximum response speeds:
+### Optional: Deploy Your Own 1-Click Vercel Instance (100% Uptime Guarantee)
+To run your own private instance with your personal GitHub rate limit:
 1. Fork the official repository: [anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats).
 2. Create a free account at [Vercel](https://vercel.com) and click **"Add New Project"**.
 3. Select your forked `github-readme-stats` repository.
@@ -66,5 +68,17 @@ If you wish to guarantee zero downtime and maximum response speeds:
 5. In Vercel environment variables, set:
    `PAT_1 = <YOUR_GITHUB_TOKEN>`
 6. Click **Deploy**.
-7. Replace `github-readme-stats-eight-theta.vercel.app` in `README.md` with your Vercel URL (e.g. `your-app.vercel.app`).
+7. Replace `github-readme-stats-eight-theta.vercel.app` in `README.md` with your Vercel URL.
 
+---
+
+## 4. GitHub Profile Metadata Recommendation
+
+To maximize recruiter discoverability on GitHub, configure the repository metadata on [github.com/tanmay9783/tanmay9783](https://github.com/tanmay9783/tanmay9783):
+
+- **About Description:**
+  `Full-Stack Developer & Software Engineer | Backend Engineering, Distributed Systems & Cloud Infrastructure`
+- **Website URL:**
+  `https://github.com/tanmay9783/portfolio`
+- **Topics (Tags):**
+  `full-stack`, `backend`, `distributed-systems`, `system-design`, `nestjs`, `rabbitmq`, `podman`, `webrtc`, `cryptography`, `terraform`, `aws`
