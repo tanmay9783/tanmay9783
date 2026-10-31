@@ -1,40 +1,86 @@
-# Technical Verification & System Audit Report (Final Polish)
+# Technical Quality-Control & Verification Report (Final QC Pass)
 
-**Candidate:** Tanmay Agrawal  
 **Repository:** [`tanmay9783/tanmay9783`](https://github.com/tanmay9783/tanmay9783)  
-**Audit Type:** Final Technical Polish & Strict Evidential Verification  
+**Candidate:** Tanmay Agrawal  
+**Audit Scope:** Quality-Control Pass — Absolute Claims Elimination, Evidential Alignment, Asset Validation  
 **Date of Audit:** October 2026  
 
 ---
 
-## 1. Executive Summary & Verification Methodology
+## 1. Files Changed & Asset Status
 
-Every assertion across the profile README has been verified against actual codebase implementations, configuration files, and standard systems engineering principles:
-
-1. **Source-Code Verified (Level 1):** Inspected directly in the repositories (`apps/backend/src/modules/submissions/queue.service.ts`, `src/services/crypto.js`, `backend/src/routes/file.js`, `AlarmScheduler.kt`, `main.tf`).
-2. **Evidential Refinements Applied:** Terminology recalibrated to ensure absolute technical accuracy without marketing inflation or imprecise cryptographic claims.
-
----
-
-## 2. Item-by-Item Verification & Refinement Log
-
-| # | Improvement Area | Codebase Finding | Refinement Applied |
-| :--- | :--- | :--- | :--- |
-| **1** | **NijiSamvad Terminology** | Codebase implements client-side PBKDF2 (SHA-256) + AES-256-GCM symmetric encryption with Socket.IO relaying opaque ciphertexts. | Replaced potentially misleading "Zero-Knowledge" phrasing with precise **"Client-Side Encrypted Communication"** where the server functions as an untrusted blind relay without access to plaintexts or keys. |
-| **2** | **Web Crypto API Claims** | `crypto.subtle` is a browser standard API. Hardware acceleration is platform/chipset-dependent, and browser APIs do not eliminate broader supply-chain vulnerabilities. | Removed claims of guaranteed hardware acceleration and supply-chain elimination. Accurately framed as leveraging standard browser-native W3C primitives to eliminate external npm dependencies. |
-| **3** | **Terraform Defensibility** | `terraform-multi-environment` uses separate workspace state directories (`.tfstate.d`). Workspaces isolate state files but do not constitute "zero risk" against misconfigurations. | Replaced absolute phrase "zero risk" with **"substantially mitigating the risk of accidental state collisions or cross-environment resource overwrites"**. |
-| **4** | **Sanjeevni AI & Swasya AI** | `tanmay9783/Sanjeevni-AI` houses the patient intake kiosk; `swasya_ai` is an independent companion clinical command center. | Renamed to **"AI-Assisted Patient Intake (Sanjeevni AI)"** and explicitly documented that Swasya AI is a separate integrated clinical system for physicians. |
-| **5** | **Offline Intake vs Cloud AI** | Kiosk logs form fields and pain coordinates to local SQLite WAL (`better-sqlite3`). Groq LLaMA 3.3 multimodal extraction requires HTTPS access to Groq endpoints. | Explicitly clarified that while demographic logging and coordinate persistence operate offline, the AI extraction and speech reasoning pipeline requires network connectivity. |
-| **6** | **Coditorium Container Latency** | No formal benchmark suites in `docs/` or `apps/execution-worker` establishing a repeatable 200–400ms container startup range. | Removed the specific "200–400ms" figure. Stated the trade-off qualitatively: per-submission container initialization incurs container cold-start latency compared to long-running worker processes. |
-| **7** | **RabbitMQ Durability Verification** | Inspected `apps/backend/src/modules/submissions/queue.service.ts`: `assertQueue(QUEUE_NAME, { durable: true })`, `sendToQueue(..., { persistent: true })`, and `consume(..., { noAck: false })` with explicit `ack`/`nack`. | Fully verified in source code. Accurately documented durable queue declarations, persistent message delivery, and manual consumer acknowledgments. |
-| **8** | **External Asset Verification** | Scripted HTTP HEAD/GET verification across all 20 external SVG, card, and badge URLs. | 100% verified (20/20 URLs returned HTTP `200 OK`). |
-| **9** | **Featured Project Visuals** | Genuine screenshots identified in portfolio assets for DropX, NijiSamvad, Planrova, Sanjeevni AI, and Coditorium. | Integrated genuine UI previews into `./assets/projects/` and rendered a clean, compact gallery table above the project breakdowns. |
-| **10** | **Mermaid Architecture Preservation** | Validated both Mermaid diagrams against GitHub-flavored Markdown parsers. | Diagram 1 (Coditorium Judge Execution) and Diagram 2 (NijiSamvad Cryptographic Key Derivation) preserved with verified component mappings. |
+| File | Status | Nature of Changes |
+| :--- | :--- | :--- |
+| **`README.md`** | **Updated & Verified** | Replaced "Production & Implementation Stack" with "Technologies Used in Projects"; updated Rootless Podman claims to risk-reduction framing; updated RabbitMQ durability descriptions; changed DropX to temporary file sharing; changed Sanjeevni to AI-Assisted Patient Intake; updated hackathon and certifications with verified Credly and Certmetrics links. |
+| **`TECHNICAL_VERIFICATION_REPORT.md`** | **Updated & Verified** | Updated with final QC audit log, technical claims verification, and asset resolution checks. |
+| **`ASSET_SETUP_GUIDE.md`** | **Verified** | Up to date with all external SVG services and GitHub Actions configuration. |
+| **`assets/projects/`** | **Verified (Committed)** | All project preview assets (`coditorium-logo.png`, `dropx-preview.png`, `nijisamvad-preview.png`, `planrova-preview.png`, `sanjeevni-preview.png`) verified committed and resolving HTTP 200 on `main`. |
 
 ---
 
-## 3. Final Recruiter & Engineer Assessment
+## 2. Broken Assets & Image Resolution Audit
 
-- **Recruiter Perspective:** Clean, visual, and highly legible. The top gallery gives immediate visual context for what Tanmay has built, while the concise bullet points highlight skills recruiters search for.
-- **Senior Systems Engineer Perspective:** Technically rigorous and defensible under interview cross-examination. Distinctions between client-side encryption and zero-knowledge, local persistence vs cloud inference, and realistic container latency demonstrate genuine hands-on systems understanding.
-- **Engineering Manager Perspective:** Shows high integrity, technical maturity, and end-to-end product delivery capability.
+All local and remote assets referenced in `README.md` were tested and verified:
+
+```
+[Local Asset Audit - assets/projects/]
+✓ assets/projects/coditorium-logo.png   (499,082 bytes) -> Resolves 200 on main
+✓ assets/projects/dropx-preview.png     (487,997 bytes) -> Resolves 200 on main
+✓ assets/projects/nijisamvad-preview.png (75,150 bytes) -> Resolves 200 on main
+✓ assets/projects/planrova-preview.png  (148,150 bytes) -> Resolves 200 on main
+✓ assets/projects/sanjeevni-preview.png (763,900 bytes) -> Resolves 200 on main
+
+[External Badge & Card Endpoints]
+✓ Typing SVG (readme-typing-svg.demolab.com)            -> HTTP 200 OK
+✓ SkillIcons Vector Grid (skillicons.dev)               -> HTTP 200 OK
+✓ GitHub Streak Stats (streak-stats.demolab.com)        -> HTTP 200 OK
+✓ GitHub Stats Card (github-readme-stats-eight-theta)   -> HTTP 200 OK
+✓ Top Languages Card (github-readme-stats-eight-theta)  -> HTTP 200 OK
+✓ LeetCode Stats Card (leetcard.jacoblin.cool)          -> HTTP 200 OK
+✓ Codeforces Card (codeforces-readme-stats)             -> HTTP 200 OK
+✓ Shields.io Action Buttons                             -> HTTP 200 OK
+```
+
+---
+
+## 3. Technical Claims Corrected (Final QC Pass)
+
+1. **Stack Categorization:** Replaced "Production & Implementation Stack" with **"Technologies Used in Projects"**, maintaining a clean separation from technologies being explored.
+2. **NijiSamvad Cryptographic Precision:** Changed heading to **"Client-Side Encrypted Communication & WebRTC Mesh"**. Removed all remaining "Zero-Knowledge" references in favor of client-side AES-256-GCM symmetric encryption with an ephemeral blind-relay server.
+3. **Rootless Podman Security Framing:** Replaced absolute claims of "eliminating root privilege escalation vectors" with risk-reduction framing: **"substantially reduce the host attack surface by executing untrusted containers without root privileges, mitigating root privilege escalation vectors on the host system."**
+4. **RabbitMQ Durability Accuracy:** Replaced "guarantee durable delivery" with precise implementation details verified in `apps/backend/src/modules/submissions/queue.service.ts`: durable queue assertions (`{ durable: true }`), disk-persisted delivery (`{ persistent: true }`), and explicit manual worker acknowledgments (`{ noAck: false }`).
+5. **DropX Terminology:** Replaced "high-speed streaming" and "ephemeral data utility" with **"temporary cross-device file sharing platform"**.
+6. **Sanjeevni AI Scoping:** Replaced "Autonomous" descriptions with **"AI-Assisted Patient Intake"**, explicitly documenting that while form responses log locally to SQLite, multimodal AI extraction requires connectivity to reach LLM endpoints.
+7. **Certifications & Hackathon Credential Verification:** Verified against official issuing bodies:
+   - *AWS Certified Cloud Practitioner* (Amazon Web Services — [Verify Credential](https://cp.certmetrics.com/amazon/en/public/verify/credential/fac9701f985443a3a5cad85982cc6520))
+   - *AWS Certified AI Practitioner* (Amazon Web Services — [Verify Credential](https://cp.certmetrics.com/amazon/en/public/verify/credential/4ad652a9eeee41e39af0dfabae4fcc8a))
+   - *AWS Academy Graduate — Generative AI Foundations* (AWS Academy — [Verify Credly Badge](https://www.credly.com/earner/earned/badge/ff32dd8b-470b-4dd4-b7da-536382d97959))
+   - *NIT Jalandhar Hackathon — Top 10 Finalist* (Ranked in Top 10 out of 100+ teams in a 36-hour sprint).
+
+---
+
+## 4. Mermaid Architecture Rendering Status
+
+- **Diagram 1 (Coditorium Judge Execution Pipeline):** Validated `flowchart TD`. Cylinder node labels formatted cleanly with no conflicting nested parentheses.
+- **Diagram 2 (NijiSamvad Cryptographic Key Derivation & Ephemeral Signaling):** Validated `sequenceDiagram`. Autonumbering, participant mappings, and note boxes verified for native GitHub rendering.
+
+---
+
+## 5. Remaining Technical Limitations (Documented in Profile)
+
+- **Coditorium:** Per-submission container initialization incurs container cold-start latency compared to long-running worker processes; warm container pooling and microVM virtualization are future milestones.
+- **NijiSamvad:** Relies on a pre-shared room passphrase without an asymmetric Double Ratchet protocol (Signal Protocol); does not provide Perfect Forward Secrecy (PFS).
+- **DropX:** In-memory `express.raw()` upload buffering caps single-file uploads at 100MB rather than using backpressure-controlled streaming pipes.
+- **Planrova:** Android alarms rely on `SCHEDULE_EXACT_ALARM` permissions and remain subject to OEM battery optimization overrides.
+- **Sanjeevni AI:** Speech recognition accuracy depends on clinic ambient acoustic noise; designed as a triage assistant rather than an autonomous diagnostic device.
+- **Terraform Multi-Env:** Deploys compute into default VPC subnets rather than a custom multi-tier VPC topology.
+
+---
+
+## 6. Repository Metadata Recommendation (Manual Setup via GitHub UI)
+
+Since GitHub SSH keys do not authenticate GitHub REST API calls, configure these values via the **About** section on [github.com/tanmay9783/tanmay9783](https://github.com/tanmay9783/tanmay9783):
+
+- **Description:** `Full-Stack Developer & Software Engineer | Backend Systems, Distributed Architecture & Cloud Infrastructure`
+- **Website:** `https://github.com/tanmay9783/portfolio`
+- **Topics:** `full-stack`, `backend`, `distributed-systems`, `system-design`, `nestjs`, `rabbitmq`, `podman`, `webrtc`, `cryptography`, `terraform`, `aws`

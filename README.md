@@ -39,7 +39,7 @@ I am a Computer Science Engineering undergraduate at **KIET Group of Institution
 
 ### Technical Competencies
 
-#### Production & Implementation Stack
+#### Technologies Used in Projects
 Technologies verified and implemented across my active repositories and projects:
 
 <table>
@@ -117,13 +117,13 @@ Technologies actively being studied and tested in lab environments:
         <sub>Client-Side Encrypted Chat</sub>
       </td>
       <td align="center" width="25%">
-        <a href="#3-dropx--ephemeral-cross-device-data--file-sharing-utility">
+        <a href="#3-dropx--temporary-cross-device-file-sharing-platform">
           <img src="./assets/projects/dropx-preview.png" width="100%" alt="DropX Preview" />
         </a>
         <br/>
         <strong>DropX</strong>
         <br/>
-        <sub>Ephemeral File Sharing</sub>
+        <sub>Temporary File Sharing</sub>
       </td>
       <td align="center" width="25%">
         <a href="#4-planrova--local-first-academic-productivity-system">
@@ -149,11 +149,11 @@ Technologies actively being studied and tested in lab environments:
 - **What I Implemented:** Architected the end-to-end judge submission pipeline. Built a NestJS API that ingests code submissions, persists pending state in PostgreSQL via Prisma, and dispatches evaluation jobs to RabbitMQ. Implemented a dedicated execution worker service that dequeues tasks and runs compilation and evaluation inside rootless Podman containers.
 - **Architecture & System Design:**
   - **Monorepo Structure:** Structured via Turborepo containing `apps/backend` (NestJS REST API), `apps/frontend` (React + Vite), `apps/execution-worker` (isolated runner), and `packages/shared` (domain contracts).
-  - **Asynchronous Task Queue:** Submission ingestion is fully decoupled from execution using RabbitMQ AMQP channels. Queue reliability is enforced via durable queue declarations (`durable: true`), persistent message delivery (`persistent: true`), and explicit worker acknowledgments (`noAck: false`).
-  - **Security Jail (Rootless Podman):** Untrusted code executes inside rootless Podman containers with dropped capabilities, isolated namespaces, explicit CPU quotas (`--cpus`), strict memory bounds (`--memory`), disabled network access (`--network none`), and execution timeouts.
+  - **Asynchronous Task Queue:** Submission ingestion is fully decoupled from execution using RabbitMQ AMQP channels. Queue reliability is enforced via durable queue declarations (`{ durable: true }`), disk-persisted message delivery (`{ persistent: true }`), and explicit worker acknowledgments (`{ noAck: false }`) to mitigate message loss during unexpected worker or network interruptions.
+  - **Security Jail (Rootless Podman):** Untrusted code executes inside rootless Podman containers with dropped capabilities, isolated namespaces, explicit CPU quotas (`--cpus`), strict memory bounds (`--memory`), disabled network access (`--network none`), and execution timeouts to mitigate denial-of-service and host privilege escalation risks.
 - **Key Technical Decisions:**
-  - Selected **RabbitMQ** over in-memory or Redis-based task queues to guarantee durable message delivery, channel-level flow control, and explicit consumer acknowledgment (`ack`/`nack`) semantics.
-  - Chose **Rootless Podman** instead of standard Docker to eliminate root-daemon exposure and root privilege escalation vectors on the host system.
+  - Selected **RabbitMQ** over in-memory or simple Redis task queues to implement durable queue declarations, disk-persisted messages, and explicit consumer acknowledgment (`ack`/`nack`) semantics to prevent message loss during worker crashes.
+  - Chose **Rootless Podman** over standard rootful Docker daemons to substantially reduce the host attack surface by executing untrusted containers without root privileges, mitigating root privilege escalation vectors on the host system.
 - **Current Limitations:** Per-submission container initialization introduces container cold-start latency compared to long-running worker processes; maintaining warm container pools or exploring microVM virtualization (e.g., Firecracker) are identified future milestones.
 - **Tech Stack:** `NestJS`, `React`, `Vite`, `TypeScript`, `PostgreSQL`, `Prisma ORM`, `RabbitMQ`, `Redis/Valkey`, `Rootless Podman`
 - **Repository:** [github.com/tanmay9783/Coditorium](https://github.com/tanmay9783/Coditorium)
@@ -179,8 +179,8 @@ Technologies actively being studied and tested in lab environments:
 
 ---
 
-#### 3. [DropX — Ephemeral Cross-Device Data & File Sharing Utility](https://github.com/tanmay9783/dropx)
-*Frictionless local and remote file sharing utility featuring ambiguity-free room discovery and automated TTL memory cleanups.*
+#### 3. [DropX — Temporary Cross-Device File Sharing Platform](https://github.com/tanmay9783/dropx)
+*Temporary cross-device file and text sharing utility featuring ambiguity-free room discovery and automated TTL memory cleanups.*
 
 - **Problem Addressed:** Transferring files and clipboard text between heterogeneous devices (iOS, Android, Windows, macOS, Linux) typically forces users through account registrations, cloud drive uploads, or email attachments, leaving permanent data trails on third-party servers.
 - **What I Implemented:** Developed an ephemeral cross-device data bridge enabling quick device pairing via QR codes or 6-character room codes, supporting temporary file uploads and clipboard synchronization with automated session eviction.
@@ -216,7 +216,7 @@ Technologies actively being studied and tested in lab environments:
 ---
 
 #### 5. [AI-Assisted Patient Intake (Sanjeevni AI)](https://github.com/tanmay9783/Sanjeevni-AI)
-*Autonomous primary healthcare intake kiosk featuring interactive 3D virtual avatars, speech recognition, and localized pain mapping.*
+*AI-assisted patient intake kiosk featuring interactive 3D virtual avatars, speech recognition, and localized pain mapping.*
 
 - **Problem Addressed:** High patient volumes in community health clinics lead to extended waiting periods and diagnostic bottlenecks, where healthcare workers spend substantial time gathering routine demographic and symptom histories from low-literacy patients.
 - **What I Implemented:** Built the **Sanjeevni AI** patient intake kiosk—an interactive web application designed for clinic entry points, featuring a 3D animated assistant, speech recognition in Hindi/Hinglish/English, and an interactive 2D anatomical body pain map.
@@ -224,7 +224,7 @@ Technologies actively being studied and tested in lab environments:
   - **Kiosk Interface:** Built with React 18, Three.js, and Web Speech API to provide an accessible, hands-free conversational interface for low-literacy patients.
   - **Localized Pain Mapping:** Developed an interactive 2D anatomical body SVG map with 1–10 severity sliders, translating visual patient inputs into standardized anatomical coordinates.
   - **Local-First Edge Storage:** Implemented local SQLite (`better-sqlite3`) storage on the kiosk node to persist demographic inputs, form responses, and anatomical coordinate logs locally. While core form logging functions without network access, multimodal AI extraction requires connectivity to reach Groq/LLaMA endpoints.
-  - **Separation of Concerns:** Built as an autonomous client-facing intake tier that structures patient dialogues into clinical SOAP summaries; designed to integrate asynchronously with **Swasya AI** (a separate companion clinical command center built for attending physicians).
+  - **Separation of Concerns:** Built as an AI-assisted client-facing intake tier that structures patient dialogues into clinical SOAP summaries; designed to integrate asynchronously with **Swasya AI** (a separate companion clinical command center built for attending physicians).
 - **Key Technical Decisions:**
   - Employed edge-deployed SQLite on the kiosk node to retain patient responses locally and mitigate data loss during connectivity dropouts.
 - **Current Limitations:** Speech recognition accuracy remains dependent on ambient clinic acoustic noise; the system is designed solely for preliminary history-taking and triage pre-screening, not autonomous clinical diagnosis.
@@ -264,7 +264,7 @@ flowchart TD
     end
 
     subgraph StateTier["Data Persistence"]
-        PG[("PostgreSQL Database (Prisma ORM)")]
+        PG[("PostgreSQL Database - Prisma ORM")]
     end
 
     subgraph QueueBroker["Task Messaging Broker"]
@@ -378,22 +378,22 @@ sequenceDiagram
 <table>
   <tr>
     <td width="50%">
-      <h4>☁️ AWS Certified AI Practitioner</h4>
-      <p>Validated foundational knowledge of machine learning architectures, cloud artificial intelligence services, security controls, and responsible AI system design on AWS.</p>
+      <h4>☁️ AWS Certified Cloud Practitioner</h4>
+      <p>Validated core AWS cloud infrastructure, IAM security, VPC networking, and Well-Architected Framework principles. [<a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/fac9701f985443a3a5cad85982cc6520" target="_blank">Verify Credential</a>]</p>
     </td>
     <td width="50%">
-      <h4>🏆 Top 10 Finalist — National Hackathon (NIT Jalandhar)</h4>
-      <p>Recognized among nationwide teams for prototyping and presenting a high-throughput, innovative software solution evaluated by industry judges.</p>
+      <h4>🤖 AWS Certified AI Practitioner</h4>
+      <p>Validated foundational knowledge of machine learning architectures, cloud AI services, security controls, and responsible AI governance. [<a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/4ad652a9eeee41e39af0dfabae4fcc8a" target="_blank">Verify Credential</a>]</p>
     </td>
   </tr>
   <tr>
     <td width="50%">
       <h4>📜 AWS Academy Graduate — Generative AI Foundations</h4>
-      <p>Coursework covering foundation model fine-tuning concepts, prompt engineering architectures, and cloud-hosted LLM deployment patterns.</p>
+      <p>Practical grounding in large language model pipelines, prompt engineering architectures, and cloud-hosted LLM services. [<a href="https://www.credly.com/earner/earned/badge/ff32dd8b-470b-4dd4-b7da-536382d97959" target="_blank">Verify Credly Badge</a>]</p>
     </td>
     <td width="50%">
-      <h4>🏗️ Modular Infrastructure as Code (Terraform)</h4>
-      <p>Authored parameterized multi-environment AWS infrastructure configurations using Terraform workspaces, data-source discovery, and isolated state files.</p>
+      <h4>🏆 NIT Jalandhar Hackathon — Top 10 Finalist</h4>
+      <p>Ranked in the Top 10 out of 100+ teams for architecting and presenting real-time distributed software during a competitive 36-hour sprint.</p>
     </td>
   </tr>
 </table>
